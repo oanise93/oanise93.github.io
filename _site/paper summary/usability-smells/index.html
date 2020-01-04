@@ -1,0 +1,523 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.17.2 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Usability Smells: An Analysis of Developers’ Struggle With Crypto Libraries - Olabode Anise</title>
+<meta name="description" content="Usability Smells: An Analysis of Developers’ Struggle With Crypto Libraries Patnaik et al., SOUPS 2019">
+
+
+  <meta name="author" content="Olabode Anise">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Olabode Anise">
+<meta property="og:title" content="Usability Smells: An Analysis of Developers’ Struggle With Crypto Libraries">
+<meta property="og:url" content="http://localhost:4000/paper%20summary/usability-smells/">
+
+
+  <meta property="og:description" content="Usability Smells: An Analysis of Developers’ Struggle With Crypto Libraries Patnaik et al., SOUPS 2019">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-01-09T00:00:00-05:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/paper%20summary/usability-smells/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Olabode Anise",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Olabode Anise Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Olabode Anise
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/" >About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/posts/" >Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/assets/resume.pdf" >Resume</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/anise-olabode-michigan.jpg" alt="Olabode Anise" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Olabode Anise</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>An irrational Steeler fan who happens to care about security and data.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Michigan</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="http://olabodeanise.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/JustSayO" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+          
+        
+          
+            <li><a href="https://github.com/oanise93" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Usability Smells: An Analysis of Developers’ Struggle With Crypto Libraries">
+    <meta itemprop="description" content="Usability Smells: An Analysis of Developers’ Struggle With Crypto Libraries Patnaik et al., SOUPS 2019">
+    <meta itemprop="datePublished" content="January 09, 2020">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Usability Smells: An Analysis of Developers’ Struggle With Crypto Libraries
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p><a href="https://www.usenix.org/system/files/soups2019-patnaik.pdf">Usability Smells: An Analysis of Developers’ Struggle With Crypto Libraries</a> Patnaik et al., <em>SOUPS 2019</em></p>
+
+<p>While at SOUPS, this particular paper stood out because it related to some work that my colleagues and I were doing surrounding certificate chain validation. Cryptography is hard and using cryptographic APIs can be difficult too. This work uncovers usability smells associated with popular cryptography libraries by conducting a thematic analysis of 2,491 StackOverflow questions. A <em>usability</em> smell is some sort of hint or indication that an interface may be difficult to use for its intended users. Usability smells are often thought of as it relates to graphical user interfaces (GUIs), but this way of thinking can be applied to APIs too.</p>
+
+<blockquote>
+  <p>Developers struggle with programming interfaces in the same way that users struggle with user interfaces.</p>
+</blockquote>
+
+<h2 id="we-all-use-stack-overflow-right">We all use Stack Overflow, right?</h2>
+
+<p>The researchers looked into seven popular cryptography libraries which are listed in the table below:</p>
+<p style="text-align: center;"><img src="/assets/images/usability-smells/table1.png" alt="table 1" height="660px" width="344px" /></p>
+
+<p>Using the library names of the seven libraries as search terms, the researchers scraped Stack Overflow and found 2,491 questions. They did some post processing of the original corpus of questions to remove questions that didn’t relate to an issue in the library itself or where a developer wrongly attributed a question to a particular library. After this filtering, they were left with 2,316 questions to perform thematic analysis on.</p>
+
+<p>The researchers acknowledged that there were a couple of threats to the validity of their work: namely the staleness of questions and that the problem posed in the question was only encountered by a single developer and thus wasn’t a general problem with the library. To mitigate the first threat, they validated that the usability issued they identified was still present in the current version of the library. And to mitigate the seecond threat, they only selected questions that had a score of at least 1.</p>
+
+<h2 id="the-issues">The Issues</h2>
+
+<p>Through thematic analysis, the researchers found 16 usability issues that they grouped into 7 themes.</p>
+
+<p><img src="/assets/images/usability-smells/figure3.png" alt="figure 3" /></p>
+
+<p>Most of the issues are pretty intuitive and what you might be used to seeing on Stack Overflow. One of the issues that stood out to me was <em>borrowed mental models</em> because I was wondering what it meant in this context. This particular issue arises when a develper tries to apply concepts from one library to another.</p>
+
+<p style="text-align: center;"><img src="/assets/images/usability-smells/table2.png" alt="table 2" height="274px" width="385px" /></p>
+
+<p>The lionshare of the issues they found were with OpenSSL and  the two most prevalent types of issues were “What’s gone wrong here” (259) and “Build Issue” (362). This means that developers were having a lot of diffculty just setting up OpenSSL let alone actually using it.</p>
+
+<p>In contrast, LibSodium had the least amount of issues with a total of 26 relevant issues. Maybe that is to be expected from library whose claims to be a “modern, portable, easy to use crypto library.”</p>
+
+<h2 id="usability-smells">Usability Smells</h2>
+<p>After identifiying the themes associated with the issues in the Stack Overflow questions, the researchers attempted to map them onto the 10 usability principles  by Green and Smith. They did not map the <em>lack of knowledge</em> or <em>passing the buck</em> issues since these are associated with specific developer behaviors and aren’t associated with the problems with the library itself. Through the mapping they found four usability smells which can be found in the table below:</p>
+
+<p style="text-align: center;"><img src="/assets/images/usability-smells/table3.png" alt="table 3" height="918px" width="550px" /></p>
+
+<ul>
+  <li>
+    <p><strong>Needs a super sleuth</strong>: this smell means usually means it is hard to find the information you need to accomplish a particular task or that it is diffcult to understand how to do it with the library.</p>
+  </li>
+  <li>
+    <p><strong>Confusion regins</strong>: this usability smells comes out before any code is written. The developer is unsusre if this is right library to use or how to use the library.</p>
+  </li>
+  <li>
+    <p><strong>Needs a post-mortem</strong>: unlike <em>confusions regins</em> the issues associated with this smells happen after writing code. Whether it is because an update has broken their code or they are generally struggling to use the library, something went wrong.</p>
+  </li>
+  <li>
+    <p><strong>Doesn’t play well with others</strong>. For a library to be easy-to-use, a developer must be able to actually use it.</p>
+  </li>
+</ul>
+
+<h2 id="how-bad-are-the-smells">How bad are the smells?</h2>
+
+<p>For the three libraries that that had the most issues OpenSSL, Bouncy Castle, and PyCrypto, the researchers added what they call a <em>Whiffiness factor</em>. It is a weighted average of the percentage frequency of the issues associated with each whiff.</p>
+
+<p style="text-align: center;"><img src="/assets/images/usability-smells/table4.png" alt="table 3" height="812px" width="564px" /></p>
+
+<p>Of the three libraries analyzed, OpenSSL came out to be the “stinkiest” but in reality it’s not much different than the other libraries. There are areas that it shines and areas that need some improvement.</p>
+
+<h2 id="wrapping-up">Wrapping Up</h2>
+
+<blockquote>
+  <p>Libraries will perhaps always be a bit smelly given
+the challenges of catering for the requirements of a wide and
+diverse set of developers and applications; but by integrating
+usability principles we can at least make them less so.</p>
+</blockquote>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#paper-summary" class="page__taxonomy-item" rel="tag">paper summary</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-01-09T00:00:00-05:00">January 09, 2020</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Usability+Smells%3A+An+Analysis+of+Developers%E2%80%99+Struggle+With+Crypto+Libraries%20http%3A%2F%2Flocalhost%3A4000%2Fpaper%2520summary%2Fusability-smells%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fpaper%2520summary%2Fusability-smells%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fpaper%2520summary%2Fusability-smells%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/general/recommitment/" class="pagination--pager" title="Recommitment to Usable Security
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/general/recommitment/" rel="permalink">Recommitment to Usable Security
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">We’re a few days into 2020, and like a lot of people I’ve tried to set my intentions/goals for the year. One of those intentions is to recommit myself to stu...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Olabode Anise. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

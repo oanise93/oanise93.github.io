@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-04T17:33:18-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Olabode Anise</title><subtitle>Olabode Anise | My musings on security, data, and probably sports</subtitle><author><name>Olabode Anise</name></author><entry><title type="html">Usability Smells: An Analysis of Developers’ Struggle With Crypto Libraries</title><link href="http://localhost:4000/paper%20summary/usability-smells/" rel="alternate" type="text/html" title="Usability Smells: An Analysis of Developers’ Struggle With Crypto Libraries" /><published>2020-01-09T00:00:00-05:00</published><updated>2020-01-09T00:00:00-05:00</updated><id>http://localhost:4000/paper%20summary/usability-smells</id><content type="html" xml:base="http://localhost:4000/paper%20summary/usability-smells/">&lt;p&gt;&lt;a href=&quot;https://www.usenix.org/system/files/soups2019-patnaik.pdf&quot;&gt;Usability Smells: An Analysis of Developers’ Struggle With Crypto Libraries&lt;/a&gt; Patnaik et al., &lt;em&gt;SOUPS 2019&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;While at SOUPS, this particular paper stood out because it related to some work that my colleagues and I were doing surrounding certificate chain validation. Cryptography is hard and using cryptographic APIs can be difficult too. This work uncovers usability smells associated with popular cryptography libraries by conducting a thematic analysis of 2,491 StackOverflow questions. A &lt;em&gt;usability&lt;/em&gt; smell is some sort of hint or indication that an interface may be difficult to use for its intended users. Usability smells are often thought of as it relates to graphical user interfaces (GUIs), but this way of thinking can be applied to APIs too.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Developers struggle with programming interfaces in the same way that users struggle with user interfaces.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;we-all-use-stack-overflow-right&quot;&gt;We all use Stack Overflow, right?&lt;/h2&gt;
+
+&lt;p&gt;The researchers looked into seven popular cryptography libraries which are listed in the table below:&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;/assets/images/usability-smells/table1.png&quot; alt=&quot;table 1&quot; height=&quot;660px&quot; width=&quot;344px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Using the library names of the seven libraries as search terms, the researchers scraped Stack Overflow and found 2,491 questions. They did some post processing of the original corpus of questions to remove questions that didn’t relate to an issue in the library itself or where a developer wrongly attributed a question to a particular library. After this filtering, they were left with 2,316 questions to perform thematic analysis on.&lt;/p&gt;
+
+&lt;p&gt;The researchers acknowledged that there were a couple of threats to the validity of their work: namely the staleness of questions and that the problem posed in the question was only encountered by a single developer and thus wasn’t a general problem with the library. To mitigate the first threat, they validated that the usability issued they identified was still present in the current version of the library. And to mitigate the seecond threat, they only selected questions that had a score of at least 1.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-issues&quot;&gt;The Issues&lt;/h2&gt;
+
+&lt;p&gt;Through thematic analysis, the researchers found 16 usability issues that they grouped into 7 themes.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/usability-smells/figure3.png&quot; alt=&quot;figure 3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Most of the issues are pretty intuitive and what you might be used to seeing on Stack Overflow. One of the issues that stood out to me was &lt;em&gt;borrowed mental models&lt;/em&gt; because I was wondering what it meant in this context. This particular issue arises when a develper tries to apply concepts from one library to another.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;/assets/images/usability-smells/table2.png&quot; alt=&quot;table 2&quot; height=&quot;274px&quot; width=&quot;385px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The lionshare of the issues they found were with OpenSSL and  the two most prevalent types of issues were “What’s gone wrong here” (259) and “Build Issue” (362). This means that developers were having a lot of diffculty just setting up OpenSSL let alone actually using it.&lt;/p&gt;
+
+&lt;p&gt;In contrast, LibSodium had the least amount of issues with a total of 26 relevant issues. Maybe that is to be expected from library whose claims to be a “modern, portable, easy to use crypto library.”&lt;/p&gt;
+
+&lt;h2 id=&quot;usability-smells&quot;&gt;Usability Smells&lt;/h2&gt;
+&lt;p&gt;After identifiying the themes associated with the issues in the Stack Overflow questions, the researchers attempted to map them onto the 10 usability principles  by Green and Smith. They did not map the &lt;em&gt;lack of knowledge&lt;/em&gt; or &lt;em&gt;passing the buck&lt;/em&gt; issues since these are associated with specific developer behaviors and aren’t associated with the problems with the library itself. Through the mapping they found four usability smells which can be found in the table below:&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;/assets/images/usability-smells/table3.png&quot; alt=&quot;table 3&quot; height=&quot;918px&quot; width=&quot;550px&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Needs a super sleuth&lt;/strong&gt;: this smell means usually means it is hard to find the information you need to accomplish a particular task or that it is diffcult to understand how to do it with the library.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Confusion regins&lt;/strong&gt;: this usability smells comes out before any code is written. The developer is unsusre if this is right library to use or how to use the library.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Needs a post-mortem&lt;/strong&gt;: unlike &lt;em&gt;confusions regins&lt;/em&gt; the issues associated with this smells happen after writing code. Whether it is because an update has broken their code or they are generally struggling to use the library, something went wrong.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Doesn’t play well with others&lt;/strong&gt;. For a library to be easy-to-use, a developer must be able to actually use it.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;how-bad-are-the-smells&quot;&gt;How bad are the smells?&lt;/h2&gt;
+
+&lt;p&gt;For the three libraries that that had the most issues OpenSSL, Bouncy Castle, and PyCrypto, the researchers added what they call a &lt;em&gt;Whiffiness factor&lt;/em&gt;. It is a weighted average of the percentage frequency of the issues associated with each whiff.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;/assets/images/usability-smells/table4.png&quot; alt=&quot;table 3&quot; height=&quot;812px&quot; width=&quot;564px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Of the three libraries analyzed, OpenSSL came out to be the “stinkiest” but in reality it’s not much different than the other libraries. There are areas that it shines and areas that need some improvement.&lt;/p&gt;
+
+&lt;h2 id=&quot;wrapping-up&quot;&gt;Wrapping Up&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Libraries will perhaps always be a bit smelly given
+the challenges of catering for the requirements of a wide and
+diverse set of developers and applications; but by integrating
+usability principles we can at least make them less so.&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Olabode Anise</name></author><summary type="html">Usability Smells: An Analysis of Developers’ Struggle With Crypto Libraries Patnaik et al., SOUPS 2019</summary></entry><entry><title type="html">Recommitment to Usable Security</title><link href="http://localhost:4000/general/recommitment/" rel="alternate" type="text/html" title="Recommitment to Usable Security" /><published>2020-01-06T00:00:00-05:00</published><updated>2020-01-06T00:00:00-05:00</updated><id>http://localhost:4000/general/recommitment</id><content type="html" xml:base="http://localhost:4000/general/recommitment/">&lt;p&gt;We’re a few days into 2020, and like a lot of people I’ve tried to set my intentions/goals for the year. One of those intentions is to recommit myself to studying and learning about the field of Usable Security.&lt;/p&gt;
+
+&lt;p&gt;In a past life, I was a PhD student at the University of Florida studying Usable Security as part of the Human-Centered Computing Program. For a few reasons that I won’t get into, I left the program after my first year to work at Duo Security. Looking back, I’m so glad that I made that decision. It has afforded me the opportunity to work with great people and to work on some really cool projects. Unfortunately, most of my work as a Data Scientist doesn’t afford me the opportunity to work in the Usable Security space. To pile on, my pursuit of a master’s degree didn’t allow me to really scratch that itch or really do much of anything outside of work. But with that degree completed and with a bit of free time back, I want to invest that time in learning and growing in an area I’m passionate about.&lt;/p&gt;
+
+&lt;p&gt;So my goal for 2020 is to read more usable security papers and to write some paper summaries as way of solidifying my understanding of what I read as well as improve my technical writing. I’m hoping to write at least one paper summary a week in the style of &lt;a href=&quot;https://blog.acolyer.org/&quot;&gt;the morning paper&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I like to look for tools to hold myself accountable and now that I’ve written this post and put it on the Internet I guess I’ve found one for this goal :).&lt;/p&gt;</content><author><name>Olabode Anise</name></author><summary type="html">We’re a few days into 2020, and like a lot of people I’ve tried to set my intentions/goals for the year. One of those intentions is to recommit myself to studying and learning about the field of Usable Security.</summary></entry></feed>
