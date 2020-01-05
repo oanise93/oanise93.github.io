@@ -2,6 +2,7 @@
 layout: single
 title: "Usability Smells: An Analysis of Developers’ Struggle With Crypto Libraries"
 categories: [paper summary]
+tags: [security]
 ---
 
 [Usability Smells: An Analysis of Developers’ Struggle With Crypto Libraries](https://www.usenix.org/system/files/soups2019-patnaik.pdf) Patnaik et al., _SOUPS 2019_

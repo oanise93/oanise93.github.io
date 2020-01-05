@@ -6,6 +6,6 @@ var store = [{
         "teaser":null},{
         "title": "Usability Smells: An Analysis of Developers’ Struggle With Crypto Libraries",
         "excerpt":"Usability Smells: An Analysis of Developers’ Struggle With Crypto Libraries Patnaik et al., SOUPS 2019 While at SOUPS, this particular paper stood out because it related to some work that my colleagues and I were doing surrounding certificate chain validation. Cryptography is hard and using cryptographic APIs can be difficult...","categories": ["paper summary"],
-        "tags": [],
+        "tags": ["security"],
         "url": "http://localhost:4000/paper%20summary/usability-smells/",
         "teaser":null}]
