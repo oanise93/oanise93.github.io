@@ -13,4 +13,9 @@ var store = [{
         "excerpt":"Keepers of the Machines: Examining How System Administrators Manage Software Updates Li et al., SOUPS 2019 Continuing through the SOUPS proceedings, I wanted to take some time to write about this paper by Frank Li, et. al. Their work focusing on the perspective of the administrator as it relates to...","categories": ["paper summary"],
         "tags": ["security"],
         "url": "http://localhost:4000/paper%20summary/keepers/",
+        "teaser":null},{
+        "title": "“I don’t see why I would ever want to use it”: Analyzing the Usability of Popular Smartphone Password Managers",
+        "excerpt":"“I don’t see why I would ever want to use it”: Analyzing the Usability of Popular Smartphone Password Managers Seiler-Hwang et al., Conference on Computers and Communication Security 2019 Moving on from SOUPS, I took a look at the proceedings from the Conference on Computers and Communication Security (CCS) and...","categories": ["paper summary"],
+        "tags": ["security"],
+        "url": "http://localhost:4000/paper%20summary/usability-smartphone-pm/",
         "teaser":null}]

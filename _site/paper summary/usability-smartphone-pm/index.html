@@ -1,0 +1,595 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.17.2 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>“I don’t see why I would ever want to use it”: Analyzing the Usability of Popular Smartphone Password Managers - Olabode Anise</title>
+<meta name="description" content="“I don’t see why I would ever want to use it”: Analyzing the Usability of Popular Smartphone Password Managers Seiler-Hwang et al., Conference on Computers and Communication Security 2019">
+
+
+  <meta name="author" content="Olabode Anise">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Olabode Anise">
+<meta property="og:title" content="“I don’t see why I would ever want to use it”: Analyzing the Usability of Popular Smartphone Password Managers">
+<meta property="og:url" content="http://localhost:4000/paper%20summary/usability-smartphone-pm/">
+
+
+  <meta property="og:description" content="“I don’t see why I would ever want to use it”: Analyzing the Usability of Popular Smartphone Password Managers Seiler-Hwang et al., Conference on Computers and Communication Security 2019">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-01-25T00:00:00-05:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/paper%20summary/usability-smartphone-pm/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Olabode Anise",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Olabode Anise Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Olabode Anise
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/" >About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/posts/" >Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/assets/resume.pdf" >Resume</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/anise-olabode-michigan.jpg" alt="Olabode Anise" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Olabode Anise</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>An irrational Steelers fan who happens to care about security and data.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Michigan</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="http://olabodeanise.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/JustSayO" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+          
+        
+          
+            <li><a href="https://github.com/oanise93" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="“I don’t see why I would ever want to use it”: Analyzing the Usability of Popular Smartphone Password Managers">
+    <meta itemprop="description" content="“I don’t see why I would ever want to use it”: Analyzing the Usability of Popular Smartphone Password Managers Seiler-Hwang et al., Conference on Computers and Communication Security 2019">
+    <meta itemprop="datePublished" content="January 25, 2020">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">“I don’t see why I would ever want to use it”: Analyzing the Usability of Popular Smartphone Password Managers
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  5 minute read
+
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p><a href="https://dl.acm.org/doi/10.1145/3319535.3354192">“I don’t see why I would ever want to use it”: Analyzing the Usability of Popular Smartphone Password Managers</a> Seiler-Hwang et al., <em>Conference on Computers and Communication Security 2019</em></p>
+
+<p>Moving on from SOUPS, I took a look at the <a href="https://sigsac.org/ccs/CCS2019/index.php/proceedings/">proceedings</a> from the Conference on Computers and Communication Security (CCS) and the first paper to catch my eye was the work by Seiler-Wang et al. The thing that stuck out about their work was that they studied a particular security tool that was popularized on desktops, in this case password managers (PM), and sought to understand the usability issues when used on a mobile device.</p>
+
+<h2 id="setting-the-stage">Setting the stage</h2>
+<p>For those who aren’t familiar with password managers, they’re digital wallets or vaults that assist in storing passwords or other secrets associated with different sites and services. In addition, to simply storing passwords they can help with password generation. While they can be immensely helpful, their usage is not widespread. According to two studies cited in the paper, password manager usage was seen to be at 17.6% [1] in 2016 and 16.7% [2] in 2018. However, mobile password usage is only at 6.8% [1]. The hypothesis is that usability issues are a factor and the authors seek to find out what those issues are.</p>
+
+<h2 id="so-what-did-they-do">So what did they do?</h2>
+<p>The authors conducted a usability study of four popular password managers: Dashlane, LastPass, Keeper and 1 Password. Each participant had to complete seven tasks ranging from installing and registering on the PM app to adjusting the security configurations of the PM.</p>
+
+<p>They evaluated their study using two tools: the standard System Usability Scale (SUS) and PACMAD (People at the Center of Mobile Application Development). Before reading this paper, I didn’t know that certain SUS scores were used to describe the general usability such as SUS scores with at least 70 means the product is <em>acceptable</em>. You can see the other mappings in the figure below. PACMAD is an evaluation framework specific for mobile devices that focuses on seven attributes: effectiveness, efficiency, learnability, memorability, errors and cognitive load. They were able to evaluate these different attributes though the SUS, NASA Task Load Index, and a set of questionnaires.</p>
+
+<p style="text-align: center;"><img src="/assets/images/mobile-password-managers/figure1.png" alt="figure 1" /></p>
+
+<p>They recruited participants through MTurk and had 20 participants complete the seven tasks for each of the four PMs resulting in 80 sets of responses. The user population that took part in the study was predominantly male, well educated, skewed young, and were mostly Android users. So the authors say that their results might not generalize well.</p>
+
+<h2 id="certain-password-managers-are-better-than-others">Certain password Managers are better than others</h2>
+<p>When looking at both the PACMAD Attributes and the SUS scores for each of the PMs, there were some interesting results. Let’s first start by looking at some of the PACMAD attributes.</p>
+
+<h3 id="pacmad">PACMAD</h3>
+<p>When evaluating the effectiveness of the four PMs, they all had a 90% success rate on average when combining the results from each of the tasks which is considered good. However, the task that had the lowest success rate was one which required the participant to download a native app for a service and login using a password stored in the PM. Participants were confused about the need to enable certain system-level permissions in order to enable auto-fill functionality. The authors hypothesize that this confusion is a result of a knowledge gap between certain groups of users.</p>
+
+<p>In contrast to effectiveness where each PM performed similarly, there were statistical differences found in the learnability of the different PMs.  Dashlane proved to have the highest learnability value (M = 75.6) with 1Password having the lowest score (51.3). The authors found that the learnability of Dashlane, LastPass and Keeper is similar with each being deemed “acceptable” according to the SUS. 1Password’s lower score was statistically different and fell in the “not acceptable” category according to the SUS.</p>
+
+<h3 id="sus-scores">SUS Scores</h3>
+<p>Dashlane received the highest average SUS score with a 76.5 while 1Password was the lowest receiving a 52.6. Based on the descriptions described earlier only Dashlane and Keeper have SUS scores that are deemed “acceptable”. Lastpass would be considered “marginal high” and 1Password would be in the “low marginal category.”  The figure below shows the distributions of the responses to the likert items that compose the SUS questionnaire.</p>
+
+<p style="text-align: center;"><img src="/assets/images/mobile-password-managers/figure3.png" alt="figure 3" /></p>
+
+<p>The authors also tried to understand the influence of demographics on the usability scores for each PM by using multiple linear regression and found that each model was not statistically significant.</p>
+
+<h2 id="author-recommendations">Author Recommendations</h2>
+<p>The authors’ recommendations to improve password managers to improve adoption centered around three things: User Guidance and Interaction, Integration and Security.</p>
+
+<p>On the <strong>user guidance front</strong>, they detail how the PMs need to do three things:</p>
+
+<p>1) educate users on what PMs are, how they help with security, and the role of master passwords</p>
+
+<p>2) provide instructions on how to use basic functionalities</p>
+
+<p>3) better explain the different security settings</p>
+
+<p>The authors mention that this could be done with better help menus, tutorials, and instructions.</p>
+
+<p>In terms of <strong>integration</strong>, the authors call out how their study found that not only was auto-fill the most useful feature, but also the most problematic. They recommend that mobile OSs offer better integration APIs and that native apps be more PM friendly.</p>
+
+<p>When it came to <strong>security</strong>, the authors start by saying that better security leads to more user trust which can foster adoption. Specifically, they speak to the different policies surrounding the master password for each of the PMs with some accepting weaker password. They recommended having strong password policies for the master password and to provide feedback for users through password strength meeters and to offer additional levels of protection like MFA. Last, they talk about the trade-offs users make when adjusting security settings. They recommend that PMs provide additional feedback so that users are made aware of how the changes they’re making impact their security.</p>
+
+<h2 id="wrapping-up">Wrapping Up</h2>
+<p>I thought that work by Seiler-Hwange et. al, was particularly insightful and showed that there is still a lot of work that needs to be done to improve the usability of mobile password managers.</p>
+<blockquote>
+  <p>.. a comparison of three biometrics (voice, face and gesture) against traditional passwords, concluded that the latter were the most usable with a SUS of 78, still a higher score than that of current popular PMs.</p>
+</blockquote>
+
+<p>My hope is that the entities developing them take this feedback and use it to develop more usable products because by doing so they will help reduce password re-use and improve the security of others.</p>
+
+<h2 id="references">References</h2>
+<p>[1]Nora Alkaldi and Karen Renaud. 2016. Why Do People Adopt, or Reject, Smart-phone Password Managers?. In 1st European Workshop on Usable Security (EuroSec2016). 1–14</p>
+
+<p>[2]Elizabeth Stobert and Robert Biddle. 2018. The password life cycle. ACM Transactions on Privacy and Security (TOPS) 21, 3 (2018), 13</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#security" class="page__taxonomy-item" rel="tag">security</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#paper-summary" class="page__taxonomy-item" rel="tag">paper summary</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-01-25T00:00:00-05:00">January 25, 2020</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%E2%80%9CI+don%E2%80%99t+see+why+I+would+ever+want+to+use+it%E2%80%9D%3A+Analyzing+the+Usability+of+Popular+Smartphone+Password+Managers%20http%3A%2F%2Flocalhost%3A4000%2Fpaper%2520summary%2Fusability-smartphone-pm%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fpaper%2520summary%2Fusability-smartphone-pm%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fpaper%2520summary%2Fusability-smartphone-pm%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/paper%20summary/keepers/" class="pagination--pager" title="Keepers of the Machines: Examining How System Administrators Manage Software Updates For Multiple Machines
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/paper%20summary/keepers/" rel="permalink">Keepers of the Machines: Examining How System Administrators Manage Software Updates For Multiple Machines
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  8 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Keepers of the Machines: Examining How System
+Administrators Manage Software Updates Li et al., SOUPS 2019
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/paper%20summary/usability-smells/" rel="permalink">Usability Smells: An Analysis of Developers’ Struggle With Crypto Libraries
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Usability Smells: An Analysis of Developers’ Struggle With Crypto Libraries Patnaik et al., SOUPS 2019
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/general/recommitment/" rel="permalink">Recommitment to Usable Security
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">We’re a few days into 2020, and like a lot of people I’ve tried to set my intentions/goals for the year. One of those intentions is to recommit myself to stu...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Olabode Anise. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

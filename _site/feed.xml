@@ -1,4 +1,63 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-16T19:24:13-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Olabode Anise</title><subtitle>Olabode Anise | My musings on security, data, and probably sports</subtitle><author><name>Olabode Anise</name></author><entry><title type="html">Keepers of the Machines: Examining How System Administrators Manage Software Updates For Multiple Machines</title><link href="http://localhost:4000/paper%20summary/keepers/" rel="alternate" type="text/html" title="Keepers of the Machines: Examining How System Administrators Manage Software Updates For Multiple Machines" /><published>2020-01-17T00:00:00-05:00</published><updated>2020-01-17T00:00:00-05:00</updated><id>http://localhost:4000/paper%20summary/keepers</id><content type="html" xml:base="http://localhost:4000/paper%20summary/keepers/">&lt;p&gt;&lt;a href=&quot;https://www.usenix.org/system/files/soups2019-li.pdf&quot;&gt;Keepers of the Machines: Examining How System
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-25T14:44:29-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Olabode Anise</title><subtitle>Olabode Anise | My musings on security, data, and probably sports</subtitle><author><name>Olabode Anise</name></author><entry><title type="html">“I don’t see why I would ever want to use it”: Analyzing the Usability of Popular Smartphone Password Managers</title><link href="http://localhost:4000/paper%20summary/usability-smartphone-pm/" rel="alternate" type="text/html" title="“I don’t see why I would ever want to use it”: Analyzing the Usability of Popular Smartphone Password Managers" /><published>2020-01-25T00:00:00-05:00</published><updated>2020-01-25T00:00:00-05:00</updated><id>http://localhost:4000/paper%20summary/usability-smartphone-pm</id><content type="html" xml:base="http://localhost:4000/paper%20summary/usability-smartphone-pm/">&lt;p&gt;&lt;a href=&quot;https://dl.acm.org/doi/10.1145/3319535.3354192&quot;&gt;“I don’t see why I would ever want to use it”: Analyzing the Usability of Popular Smartphone Password Managers&lt;/a&gt; Seiler-Hwang et al., &lt;em&gt;Conference on Computers and Communication Security 2019&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Moving on from SOUPS, I took a look at the &lt;a href=&quot;https://sigsac.org/ccs/CCS2019/index.php/proceedings/&quot;&gt;proceedings&lt;/a&gt; from the Conference on Computers and Communication Security (CCS) and the first paper to catch my eye was the work by Seiler-Wang et al. The thing that stuck out about their work was that they studied a particular security tool that was popularized on desktops, in this case password managers (PM), and sought to understand the usability issues when used on a mobile device.&lt;/p&gt;
+
+&lt;h2 id=&quot;setting-the-stage&quot;&gt;Setting the stage&lt;/h2&gt;
+&lt;p&gt;For those who aren’t familiar with password managers, they’re digital wallets or vaults that assist in storing passwords or other secrets associated with different sites and services. In addition, to simply storing passwords they can help with password generation. While they can be immensely helpful, their usage is not widespread. According to two studies cited in the paper, password manager usage was seen to be at 17.6% [1] in 2016 and 16.7% [2] in 2018. However, mobile password usage is only at 6.8% [1]. The hypothesis is that usability issues are a factor and the authors seek to find out what those issues are.&lt;/p&gt;
+
+&lt;h2 id=&quot;so-what-did-they-do&quot;&gt;So what did they do?&lt;/h2&gt;
+&lt;p&gt;The authors conducted a usability study of four popular password managers: Dashlane, LastPass, Keeper and 1 Password. Each participant had to complete seven tasks ranging from installing and registering on the PM app to adjusting the security configurations of the PM.&lt;/p&gt;
+
+&lt;p&gt;They evaluated their study using two tools: the standard System Usability Scale (SUS) and PACMAD (People at the Center of Mobile Application Development). Before reading this paper, I didn’t know that certain SUS scores were used to describe the general usability such as SUS scores with at least 70 means the product is &lt;em&gt;acceptable&lt;/em&gt;. You can see the other mappings in the figure below. PACMAD is an evaluation framework specific for mobile devices that focuses on seven attributes: effectiveness, efficiency, learnability, memorability, errors and cognitive load. They were able to evaluate these different attributes though the SUS, NASA Task Load Index, and a set of questionnaires.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;/assets/images/mobile-password-managers/figure1.png&quot; alt=&quot;figure 1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;They recruited participants through MTurk and had 20 participants complete the seven tasks for each of the four PMs resulting in 80 sets of responses. The user population that took part in the study was predominantly male, well educated, skewed young, and were mostly Android users. So the authors say that their results might not generalize well.&lt;/p&gt;
+
+&lt;h2 id=&quot;certain-password-managers-are-better-than-others&quot;&gt;Certain password Managers are better than others&lt;/h2&gt;
+&lt;p&gt;When looking at both the PACMAD Attributes and the SUS scores for each of the PMs, there were some interesting results. Let’s first start by looking at some of the PACMAD attributes.&lt;/p&gt;
+
+&lt;h3 id=&quot;pacmad&quot;&gt;PACMAD&lt;/h3&gt;
+&lt;p&gt;When evaluating the effectiveness of the four PMs, they all had a 90% success rate on average when combining the results from each of the tasks which is considered good. However, the task that had the lowest success rate was one which required the participant to download a native app for a service and login using a password stored in the PM. Participants were confused about the need to enable certain system-level permissions in order to enable auto-fill functionality. The authors hypothesize that this confusion is a result of a knowledge gap between certain groups of users.&lt;/p&gt;
+
+&lt;p&gt;In contrast to effectiveness where each PM performed similarly, there were statistical differences found in the learnability of the different PMs.  Dashlane proved to have the highest learnability value (M = 75.6) with 1Password having the lowest score (51.3). The authors found that the learnability of Dashlane, LastPass and Keeper is similar with each being deemed “acceptable” according to the SUS. 1Password’s lower score was statistically different and fell in the “not acceptable” category according to the SUS.&lt;/p&gt;
+
+&lt;h3 id=&quot;sus-scores&quot;&gt;SUS Scores&lt;/h3&gt;
+&lt;p&gt;Dashlane received the highest average SUS score with a 76.5 while 1Password was the lowest receiving a 52.6. Based on the descriptions described earlier only Dashlane and Keeper have SUS scores that are deemed “acceptable”. Lastpass would be considered “marginal high” and 1Password would be in the “low marginal category.”  The figure below shows the distributions of the responses to the likert items that compose the SUS questionnaire.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;/assets/images/mobile-password-managers/figure3.png&quot; alt=&quot;figure 3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The authors also tried to understand the influence of demographics on the usability scores for each PM by using multiple linear regression and found that each model was not statistically significant.&lt;/p&gt;
+
+&lt;h2 id=&quot;author-recommendations&quot;&gt;Author Recommendations&lt;/h2&gt;
+&lt;p&gt;The authors’ recommendations to improve password managers to improve adoption centered around three things: User Guidance and Interaction, Integration and Security.&lt;/p&gt;
+
+&lt;p&gt;On the &lt;strong&gt;user guidance front&lt;/strong&gt;, they detail how the PMs need to do three things:&lt;/p&gt;
+
+&lt;p&gt;1) educate users on what PMs are, how they help with security, and the role of master passwords&lt;/p&gt;
+
+&lt;p&gt;2) provide instructions on how to use basic functionalities&lt;/p&gt;
+
+&lt;p&gt;3) better explain the different security settings&lt;/p&gt;
+
+&lt;p&gt;The authors mention that this could be done with better help menus, tutorials, and instructions.&lt;/p&gt;
+
+&lt;p&gt;In terms of &lt;strong&gt;integration&lt;/strong&gt;, the authors call out how their study found that not only was auto-fill the most useful feature, but also the most problematic. They recommend that mobile OSs offer better integration APIs and that native apps be more PM friendly.&lt;/p&gt;
+
+&lt;p&gt;When it came to &lt;strong&gt;security&lt;/strong&gt;, the authors start by saying that better security leads to more user trust which can foster adoption. Specifically, they speak to the different policies surrounding the master password for each of the PMs with some accepting weaker password. They recommended having strong password policies for the master password and to provide feedback for users through password strength meeters and to offer additional levels of protection like MFA. Last, they talk about the trade-offs users make when adjusting security settings. They recommend that PMs provide additional feedback so that users are made aware of how the changes they’re making impact their security.&lt;/p&gt;
+
+&lt;h2 id=&quot;wrapping-up&quot;&gt;Wrapping Up&lt;/h2&gt;
+&lt;p&gt;I thought that work by Seiler-Hwange et. al, was particularly insightful and showed that there is still a lot of work that needs to be done to improve the usability of mobile password managers.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;.. a comparison of three biometrics (voice, face and gesture) against traditional passwords, concluded that the latter were the most usable with a SUS of 78, still a higher score than that of current popular PMs.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;My hope is that the entities developing them take this feedback and use it to develop more usable products because by doing so they will help reduce password re-use and improve the security of others.&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+&lt;p&gt;[1]Nora Alkaldi and Karen Renaud. 2016. Why Do People Adopt, or Reject, Smart-phone Password Managers?. In 1st European Workshop on Usable Security (EuroSec2016). 1–14&lt;/p&gt;
+
+&lt;p&gt;[2]Elizabeth Stobert and Robert Biddle. 2018. The password life cycle. ACM Transactions on Privacy and Security (TOPS) 21, 3 (2018), 13&lt;/p&gt;</content><author><name>Olabode Anise</name></author><category term="security" /><summary type="html">“I don’t see why I would ever want to use it”: Analyzing the Usability of Popular Smartphone Password Managers Seiler-Hwang et al., Conference on Computers and Communication Security 2019</summary></entry><entry><title type="html">Keepers of the Machines: Examining How System Administrators Manage Software Updates For Multiple Machines</title><link href="http://localhost:4000/paper%20summary/keepers/" rel="alternate" type="text/html" title="Keepers of the Machines: Examining How System Administrators Manage Software Updates For Multiple Machines" /><published>2020-01-17T00:00:00-05:00</published><updated>2020-01-17T00:00:00-05:00</updated><id>http://localhost:4000/paper%20summary/keepers</id><content type="html" xml:base="http://localhost:4000/paper%20summary/keepers/">&lt;p&gt;&lt;a href=&quot;https://www.usenix.org/system/files/soups2019-li.pdf&quot;&gt;Keepers of the Machines: Examining How System
 Administrators Manage Software Updates&lt;/a&gt; Li et al., &lt;em&gt;SOUPS 2019&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Continuing through the SOUPS proceedings, I wanted to take some time to write about this paper by Frank Li, et. al. Their work focusing on the perspective of the administrator as it relates to managing software updates received the Distinguished Paper Award. I think what stood out about this paper is their focus on the admin. Most of the literature surrounding updating focuses on the end-user which is useful; however, admin who manages thousands of devices has to consider different things. In their work, they do an in-depth investigation of the process admins follow when updating the machines they manage.&lt;/p&gt;
