@@ -1,0 +1,652 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.17.2 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>A Usability Evaluation of Let’s Encrypt and Certbot: Usable Security Done Right - Olabode Anise</title>
+<meta name="description" content="“A Usability Evaluation of Let’s Encrypt and Certbot: Usable Security Done Right” Tiefenau et al., Conference on Computers and Communication Security 2019">
+
+
+  <meta name="author" content="Olabode Anise">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Olabode Anise">
+<meta property="og:title" content="A Usability Evaluation of Let’s Encrypt and Certbot: Usable Security Done Right">
+<meta property="og:url" content="http://localhost:4000/paper%20summary/certbot/">
+
+
+  <meta property="og:description" content="“A Usability Evaluation of Let’s Encrypt and Certbot: Usable Security Done Right” Tiefenau et al., Conference on Computers and Communication Security 2019">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-02-01T00:00:00-06:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/paper%20summary/certbot/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Olabode Anise",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Olabode Anise Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Olabode Anise
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/" >About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/posts/" >Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/assets/resume.pdf" >Resume</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/anise-olabode-michigan.jpg" alt="Olabode Anise" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Olabode Anise</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>An irrational Steelers fan who happens to care about security and data.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Michigan</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="http://olabodeanise.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/JustSayO" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+          
+        
+          
+            <li><a href="https://github.com/oanise93" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="A Usability Evaluation of Let’s Encrypt and Certbot: Usable Security Done Right">
+    <meta itemprop="description" content="“A Usability Evaluation of Let’s Encrypt and Certbot: Usable Security Done Right” Tiefenau et al., Conference on Computers and Communication Security 2019">
+    <meta itemprop="datePublished" content="February 01, 2020">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">A Usability Evaluation of Let’s Encrypt and Certbot: Usable Security Done Right
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  7 minute read
+
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p><a href="https://dl.acm.org/doi/10.1145/3319535.3363220">“A Usability Evaluation of Let’s Encrypt and Certbot: Usable Security Done Right”</a> Tiefenau et al., <em>Conference on Computers and Communication Security 2019</em></p>
+
+<p>When looking through the CCS proceedings, I knew that I had to find out more about the work by Tiefenau et al., purely by the title alone. What stuck out about the title in particular was the “Usable Security Done Right” subtitle. There’s been a trend in the Usable Security space of extracting a provocative quote from a survey or study participant that shows their misunderstanding of a method, technology, protocol, etc. and using that as part of the title. This paper didn’t didn’t do that but rather highlighted a certain tool that was getting things right. While my curiosity was piqued by the title, the rest of the paper definitely didn’t disappoint.</p>
+
+<h2 id="tls-tls-tls">TLS TLS TLS</h2>
+
+<p>Transport Layer Security (TLS) is one of the protocols that people interact with pretty much every day without thinking about it. With its importance to securing data and how frequently people interact with it, it has been a subject of a lot of usable security research. Most of that research has focused on how users perceive TLS warnings and how to potentially improve them. While understanding the user side of things is important, it leaves out the other essential and less-studied side: server configuration. That’s where <a href="https://letsencrypt.org/">Let’s Encrypt</a> and <a href="https://certbot.eff.org/">Certbot</a> come in. Certbot helps automates the acquisition of certificates from Let’s Encryption and the parts of the configuration on web servers.</p>
+
+<h2 id="what-were-they-looking-for">What were they looking for?</h2>
+
+<p>In their work, Tiefenau and his colleagues tried to find out the advantages of using Let’s encrypt through a randomized controlled trial comparing Let’s Encrypt and Certbot to a traditional CA. More specifically they had the following research questions:</p>
+
+<ul>
+  <li>Does Certbot support its users in fulfilling the task of en-abling TLS?</li>
+  <li>How do participants perceive Certbot’s functionality and usability?</li>
+  <li>How can the Certbot process be improved?</li>
+  <li>How does task framing affect how participants behave in the study?</li>
+</ul>
+
+<h2 id="lets-talk-design">Let’s talk design</h2>
+
+<h3 id="overall-design">Overall Design</h3>
+<p>The study design that Tiefenau et al. used was based on a study conducted by Krombholz et al [1]. There were two differences between the designs of the two studies 1) in Tiefenau et al.’s study they had two treatment groups which were a conventional CA and Certbot + Let’s Encrypt CA and 2) they also examined the skill of the participants by making them also perform server related actions such as proving server ownership. Another element that they added to to the study was the concept of framing. As mentioned earlier, they tried to understand if framing had an effect on how participants performed. They tried to accomplish this by creating a role-playing scenario for half of the participants were they were to imagine that they were working for a company. They made this scenario more realistic by using tailoring the URLs, usernames and passwords. When first reading the paper, I was a bit confused about which part of the study was within-subjects and which part was between-subjects but the table below really clears things up.</p>
+
+<p style="text-align: center;"><img src="/assets/images/certbot/table1.png" alt="table1 1" /></p>
+
+<h3 id="tasks">Tasks</h3>
+<p>Each participant had to complete four tasks:</p>
+<ul>
+  <li>Task 1: The user had to SSH into the server and move web pages to the <code class="language-plaintext highlighter-rouge">www</code> directory. This task was used to get a baseline of the participant’s Linux skill level.</li>
+  <li>Task 2: The participant had to acquire the certificate from a traditional CA or they have to use certbot to acquire a cert and install it on the server</li>
+  <li>Task 3: The participants in the traditional CA treatment had to install the certificate</li>
+  <li>Task 4: Participants checked their server configuration using Qualys SSL Server Test</li>
+</ul>
+
+<p>Participants had to complete each of the four tasks for both treatments and were given a time limit of 2 hours for the Certbot task and 3 hours for the traditional CA task. After the completion of each task they completed a questionnaire that asked them to assess their performance and contained questions about the tasks themselves. At the conclusion of both tasks they completed a final questionnaire which compared the two options.</p>
+
+<h3 id="participants-and-support-channel">Participants and Support Channel</h3>
+<p>To substitute for an expert population, Tiefenau et al.used a class of computer science students. As would be expected the demographics of the group skewed male and young. About 71% of the participants had experience as a sysadmin but over half had never configured TLS before.</p>
+
+<p>The last and the most interesting part of the study design to me was the support channel that they set up. They used this channel two counter two common issues in user studies with complex tasks: 1) participants failing early and never getting to the task of interest and 2) participants forgetting the issues they ran into when trying to complete a long procedure. In terms of participants failing early, they were able to give appropriate hints or nudges in the case a participant was having trouble SSH’ing into the server. Also, they were able to get immediate feedback when a participant ran into a problem because they would send them a message. Tiefenau et al. used a playbook to decide what help to provide to participants and what type of delay to use in responding.</p>
+
+<h2 id="configure-or-not-there-is-no-try">Configure or not, there is no try</h2>
+<p>Now, that we’ve detailed the study design, let’s talk about how the participants did.</p>
+
+<p>The completion results between the traditional CA treatment and the Certbot treatment were pretty eye-opening. 28 (90%) of participants were able to deploy a certificate from Let’s Encrypt using certbot as compared to only 16 (52%) with the traditional approach. It’s pretty clear that certbot drastically improved participants ability to configure TLS on a web server. The table below shows the different points that participants failed at.</p>
+
+<p style="text-align: center;"><img src="/assets/images/certbot/table3.png" alt="table 3" /></p>
+
+<p>The results regarding the time to configure TLS followed the same trend as the completions results. The median time for Certbot task was 18 minutes compared to the 65 minutes for the traditional CA task.</p>
+
+<p>A finding that the authors found surprising was that participants performed well with security and CA parts; however, they struggled with the tasks that were specific to configuring Apache which was used as the webserver. These problems ranged from being able to perform the ownership verification to not knowing enable the SSL module of Apache2.</p>
+
+<p>In the comparison survey, the combination of Let’s Encrypt and Certbot won out in every category except transparency. The reason for this was most likely because of the automation that Certbot provides potentially masking steps in the process.</p>
+
+<p style="text-align: center;"><img src="/assets/images/certbot/figure2.png" alt="figure 2" /></p>
+
+<p>In terms of framing, they didn’t not find any difference in the behavior of participants.</p>
+
+<h2 id="tell-me-whats-good-or-bad">Tell me what’s good (or bad)</h2>
+
+<h3 id="the-bad">The bad</h3>
+<p>One of the negative things called out in the post-task questionnaire and the comparison survey was that actions taken by Certbot weren’t transparent to the user. One participant in particular had the following remark:</p>
+
+<blockquote>
+  <p>everything was easy,but […] Certbot is not transparent to me. I do not know what it ac-tually did and the whole process inside, for me it is like (a) blackbox”</p>
+</blockquote>
+
+<p>The authors point out that Certbot has a verbose option but none of the participants chose to use it. Nevertheless, it seems like the default verbosity should be increased.</p>
+
+<p>The next thing that users commented on was that Certbot didn’t offer more advanced security configurations. The authors counterpoint to this was that Certbot has to be general to support different use cases and administrators and it is on the right path; however, they do suggest that future work should look into the tradeoff between security and generalizability.</p>
+
+<h3 id="the-good">The good</h3>
+
+<p>The authors pointed out that the simplicity of the Certbot is one of the key factors of it success and most importantly it didn’t require to have knowledge about the process.</p>
+
+<blockquote>
+  <p>Certbot applied the knowledge of its experts auto-matically with little need for specialized knowledge, by guiding the user through the process using a dialog-like approach instead of requiring multiple commands on the command line.</p>
+</blockquote>
+
+<p>The other part of it’s usability as stated by the authors was that it used safe defaults and automated several steps while only introducing two new ones.</p>
+
+<h2 id="wrap-up">Wrap Up</h2>
+
+<p>The combination of Let’s Encrypt and Certbot show that when “administrator-centered engineering” is combined with simplicity problems that are long considered hard to solve at scale can be become significantly easier</p>
+
+<h2 id="references">References</h2>
+<p>[1] Katharina Krombholz, Wilfried Mayer, Martin Schmiedecker, and Edgar R. Weippl.”I Have No Idea What I’m Doing” - On the Usability of Deploying HTTPS. In 26th USENIX Security Symposium, USENIX Security 2017, 2017.</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#security" class="page__taxonomy-item" rel="tag">security</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#paper-summary" class="page__taxonomy-item" rel="tag">paper summary</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-01T00:00:00-06:00">February 01, 2020</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=A+Usability+Evaluation+of+Let%27s+Encrypt+and+Certbot%3A+Usable+Security+Done+Right%20http%3A%2F%2Flocalhost%3A4000%2Fpaper%2520summary%2Fcertbot%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fpaper%2520summary%2Fcertbot%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fpaper%2520summary%2Fcertbot%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/paper%20summary/usability-smartphone-pm/" class="pagination--pager" title="“I don’t see why I would ever want to use it”: Analyzing the Usability of Popular Smartphone Password Managers
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/paper%20summary/usability-smartphone-pm/" rel="permalink">“I don’t see why I would ever want to use it”: Analyzing the Usability of Popular Smartphone Password Managers
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  5 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">“I don’t see why I would ever want to use it”: Analyzing the Usability of Popular Smartphone Password Managers Seiler-Hwang et al., Conference on Computers a...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/paper%20summary/keepers/" rel="permalink">Keepers of the Machines: Examining How System Administrators Manage Software Updates For Multiple Machines
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  8 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Keepers of the Machines: Examining How System
+Administrators Manage Software Updates Li et al., SOUPS 2019
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/paper%20summary/usability-smells/" rel="permalink">Usability Smells: An Analysis of Developers’ Struggle With Crypto Libraries
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Usability Smells: An Analysis of Developers’ Struggle With Crypto Libraries Patnaik et al., SOUPS 2019
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/general/recommitment/" rel="permalink">Recommitment to Usable Security
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">We’re a few days into 2020, and like a lot of people I’ve tried to set my intentions/goals for the year. One of those intentions is to recommit myself to stu...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Olabode Anise. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
