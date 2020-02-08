@@ -1,4 +1,168 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-25T14:44:29-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Olabode Anise</title><subtitle>Olabode Anise | My musings on security, data, and probably sports</subtitle><author><name>Olabode Anise</name></author><entry><title type="html">“I don’t see why I would ever want to use it”: Analyzing the Usability of Popular Smartphone Password Managers</title><link href="http://localhost:4000/paper%20summary/usability-smartphone-pm/" rel="alternate" type="text/html" title="“I don’t see why I would ever want to use it”: Analyzing the Usability of Popular Smartphone Password Managers" /><published>2020-01-25T00:00:00-05:00</published><updated>2020-01-25T00:00:00-05:00</updated><id>http://localhost:4000/paper%20summary/usability-smartphone-pm</id><content type="html" xml:base="http://localhost:4000/paper%20summary/usability-smartphone-pm/">&lt;p&gt;&lt;a href=&quot;https://dl.acm.org/doi/10.1145/3319535.3354192&quot;&gt;“I don’t see why I would ever want to use it”: Analyzing the Usability of Popular Smartphone Password Managers&lt;/a&gt; Seiler-Hwang et al., &lt;em&gt;Conference on Computers and Communication Security 2019&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-02-08T17:46:26-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Olabode Anise</title><subtitle>Olabode Anise | My musings on security, data, and probably sports</subtitle><author><name>Olabode Anise</name></author><entry><title type="html">Moving Beyond Set-It-And-Forget-It Privacy Settings on Social Media</title><link href="http://localhost:4000/paper%20summary/beyond-set-it-and-forget-it/" rel="alternate" type="text/html" title="Moving Beyond Set-It-And-Forget-It Privacy Settings on Social Media" /><published>2020-02-08T00:00:00-05:00</published><updated>2020-02-08T00:00:00-05:00</updated><id>http://localhost:4000/paper%20summary/beyond-set-it-and-forget-it</id><content type="html" xml:base="http://localhost:4000/paper%20summary/beyond-set-it-and-forget-it/">&lt;p&gt;&lt;a href=&quot;https://www.cs.uic.edu/~elena/pubs/mondal-ccs19.pdf&quot;&gt;Moving Beyond Set-It-And-Forget-It Privacy Settings on Social Media&lt;/a&gt; Mainack Mondel et al., Conference on Computers and Communication Security 2019&lt;/p&gt;
+
+&lt;p&gt;The last paper that I looked at from CCS is a bit different than the four previous papers that I’ve summarized that have focused on the usability of libraries, methods, and technologies. This work by Mandal and his collaborators centers around user privacy on Facebook. There is also a bit of machine learning, but I promise you there won’t be too much math. With that said, let’s dig in!&lt;/p&gt;
+
+&lt;h2 id=&quot;privacy-on-facebook&quot;&gt;Privacy on Facebook&lt;/h2&gt;
+
+&lt;p&gt;The main thread throughout the paper is that a user’s preference with whom to share data (in this case Facebook posts) may change over time. In the case of Facebook, the number of friends a user has now could be many times higher than when a particular post was first made. As a result, the privacy settings that were originally used on a post may not be appropriate given a user’s new connections.&lt;/p&gt;
+
+&lt;p&gt;As a primer for those that don’t use Facebook, Facebook allows users to control who sees their posts through the Audience Selector. Mainack et al., do a great job in comparing it to traditional role-based access control where the roles are as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;public&lt;/strong&gt;: anyone can see it&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;friends+&lt;/strong&gt;: the user’s Friends plus the friends of some/all of those friends&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;friends&lt;/strong&gt;: the user’s Facebook friends&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;custom&lt;/strong&gt;: a user-specified subset of Facebook friends&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;only me&lt;/strong&gt;: only the user&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;goals&quot;&gt;#Goals&lt;/h2&gt;
+&lt;p&gt;In the work by Mandal et al., they try to build an understanding of Facebook privacy attitudes and and practices and how those may change over time through a user study with the goal of translating those findings into a human-in the-loop privacy management system.&lt;/p&gt;
+
+&lt;h2 id=&quot;user-study&quot;&gt;User Study&lt;/h2&gt;
+
+&lt;p&gt;In addition to understanding the privacy practices and attitudes of Facebook users, they conducted the user study to get data to be used later to test a predictive model.&lt;/p&gt;
+
+&lt;h3 id=&quot;recruitment-and-demographics&quot;&gt;Recruitment and Demographics&lt;/h3&gt;
+&lt;p&gt;They recruited participants using Amazon MTurk who were at least 18 years of age and located in North America. In total, they had 101 participants. Over 2/3 of their participants identified as female. 46% of participants fell in the 25-34 age range which was consistent with the overall age distribution of Facebook users in 2018 [1]. 87% of participants identified as white. In terms of Facebook usage, approximately 90% of participants reported using Facebook daily. More info about their usage can be found in the table below.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;/assets/images/set-it-and-forget-it/table2.png&quot; alt=&quot;table 2&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;getting-data-and-labels&quot;&gt;Getting Data and Labels&lt;/h3&gt;
+&lt;p&gt;In order to collect participant data, they had each participant download a browser extension. The extension collects an anonymized version of their full Facebook timeline as well as their Facebook activity log. This was accomplished by the browser extension sharing their session cookie with a server at University of Chicago which used Selenium to download the relevant parts of the participant’s timeline and activity log. In the paper, Mandal et al. provide more detail than I can put in this summary about how they try to collect the data in privacy preserving way. A diagram of the protocol that they used can be seen in the figure below.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;/assets/images/set-it-and-forget-it/figure1.png&quot; alt=&quot;figure 1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;After they collected each participant’s data, they did a two-part survey. In Part 1, they randomly selected five posts from a participants timeline. Then they showed them the posts current privacy settings and if they had changed the posts settings or considered changing them. Last, they asked if the participant wanted to change those settings or keep them the same and why. In part two, they used those same posts but they showed six of the participant’s Facebook friends who could see the post. They also asked whether or not the participant wanted to continue sharing that post with that person or if they didn’t care. The six friends were picked from six categories of interaction where interaction was measured through things like number of words exchanges via posts and comments and the number of reactions the participant and their friend gave each other on posts. More information on those six categories can be found in the table below.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;/assets/images/set-it-and-forget-it/table2.png&quot; alt=&quot;table 2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In addition to the post experiment, participants completed a survey which asked about their overall Facebook usage and their use of Facebook’s privacy features.&lt;/p&gt;
+
+&lt;h3 id=&quot;findings-from-the-data&quot;&gt;Findings from the Data&lt;/h3&gt;
+&lt;p&gt;In examining the longitudinal data, they found that friends (the default setting) was the most used privacy setting. The reason that this is important is that because the number of friends each participant had increased over time they were therefore sharing these older posts with more and more people. Another interesting but intuitive finding from the survey they administered was that a participant’s life changes impacted their privacy settings. The most common personal changes that were cited were relationship changes and childbirth.&lt;/p&gt;
+
+&lt;p&gt;Shifting gears to the two post experiments, Mandal et al. found that the majority (~75%) of posts didn’t require any changes, but 63.5 participants wanted to change the privacy settings on at least one post. Interestingly enough, the changes that participants wanted to make were roughly split between increasing and decreasing the audience size.&lt;/p&gt;
+
+&lt;p&gt;Mandal et al. also explored the correlation between participants’ privacy preferences and the interactions they had with a particular user. They found that participants were more likely to share posts with friends whom they had a high degree of recent interactions with than those who they had not recently interacted with. That makes a lot of sense; however, the inverse wasn’t true. Participants also wanted to “definitely keep sharing” posts with 35% of the friends who they hadn’t had any interaction with in the past year. When they examined the qualitative data that was collected, Mandal and his collaborators found that 35% fell into the categories of family member or close friend.&lt;/p&gt;
+
+&lt;h2 id=&quot;lets-do-some-prediction&quot;&gt;Let’s Do Some prediction&lt;/h2&gt;
+&lt;p&gt;As mentioned earlier, the ultimate goal was to help users have the right privacy settings for posts that were made in the past no matter how old they are. Because the amount of posts can be large the only reasonable course of action would be to use some type of automated system. Cue Machine Learning!&lt;/p&gt;
+
+&lt;h3 id=&quot;problem-formulation&quot;&gt;Problem formulation&lt;/h3&gt;
+&lt;p&gt;Mandal et al. formulated the problem as binary classification where the two classes were &lt;em&gt;limit sharing&lt;/em&gt; and &lt;em&gt;do not limit sharing&lt;/em&gt;. They also stress that they would want this to be a human-in-the loop system and not a “fully automatic post manager.”&lt;/p&gt;
+
+&lt;h3 id=&quot;data-and-features&quot;&gt;Data and Features&lt;/h3&gt;
+&lt;p&gt;The features that they used were composed of information gathered through the survey responses, user information, posts statistics, content, and audience. For post statistics, they used things like the number of likes and comments, whether or not another user was tagged, etc. They also used NLP methods to extract content-level features from the text of posts.&lt;/p&gt;
+
+&lt;h3 id=&quot;evaluation&quot;&gt;Evaluation&lt;/h3&gt;
+&lt;p&gt;Mandal et al. evaluated several models such as Decision Trees, Logistic Regression, and Support Vector Machines. The results of these models were tested against two baselines. The first was a random classifier where they randomly show posts to users. The second baseline uses the level of interaction between the user and their friend and predicts &lt;em&gt;limit sharing&lt;/em&gt; for friends with low levels of interaction.&lt;/p&gt;
+
+&lt;p&gt;For their experiments, they used two datasets. One called the &lt;strong&gt;post dataset&lt;/strong&gt; containing 389 posts and another called the &lt;strong&gt;friend-post dataset&lt;/strong&gt; containing 2336 labels. Each dataset has different goals. In the &lt;strong&gt;post dataset&lt;/strong&gt;, they try to predict whether a user should decrease the audience of a post. In this &lt;strong&gt;friend-post dataset&lt;/strong&gt;, they try to predict whether or not a specific friend’s access to the post should be removed. The difference in the datasets is that the &lt;strong&gt;friend-post dataset&lt;/strong&gt; contains six times as much data (and therefore labels) because it has the decisions made for the six friends that were randomly shown.&lt;/p&gt;
+
+&lt;p&gt;The metrics that they used for evaluation were the precision and for &lt;em&gt;limit sharing&lt;/em&gt;. In addition, they also include &lt;a href=&quot;https://en.wikipedia.org/wiki/Evaluation_measures_(information_retrieval)#Precision_at_K&quot;&gt;precision at K&lt;/a&gt; which is the precision after predicting the top K results as positive. They included precision at K because they could vary the number of posts shown to a user.&lt;/p&gt;
+
+&lt;h3 id=&quot;results&quot;&gt;Results&lt;/h3&gt;
+&lt;p&gt;On the &lt;strong&gt;friend-post dataset&lt;/strong&gt;, they found that the XGBoost model had the highest precision at K performing the best for even low values of K. In examining the precision-recall curve, they found that when K was set to 30  they found that the precision-recall area under the curve (PR AUC) was 0.493 which was much higher than the 0.118 PR AUC achieved by the interaction baseline model. The reason 30 was used as the value of K was that it corresponds with the underlying distribution of &lt;em&gt;limit sharing&lt;/em&gt;. Mandal et al. also tried to find the most predictive features. In the table below, you’ll see the top 10 features for the XGBoost model.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;/assets/images/set-it-and-forget-it/table4.png&quot; alt=&quot;table 4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For both datasets, they analyzed which posts their classifier was wrong. One of their findings was that a significant number of misclassified posts were those that linked to external content like images or videos. Mandal et al. didn’t collect features specific to a posts’ external content for privacy reasons and because it wasn’t supported by current literature. They also found that another source of inaccuracy for misclassified posts (16%) was that they didn’t have features specific to participant’s friends. An example provided in the paper pertaining to why a participant would share a post with a particular friend was “I think she likes articles about animals.”&lt;/p&gt;
+
+&lt;h2 id=&quot;wrapping-up&quot;&gt;Wrapping Up&lt;/h2&gt;
+&lt;p&gt;In this work, Mandal et al. find that for Facebook users access control is usually set-it and forget-it but that has longer term implications as a user’s life changes, the number of posts they have increase, and the number of friends they have rises. Moreover, predicting whether or not to limit sharing of a post with a particular through the use of machine learning models is more effective than simply relying on the interaction between users.&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;p&gt;[1] Statista. 2018. Number of Facebook users by age in the U.S. as of January 2018
+(in millions). https://www.statista.com/statistics/398136/us-facebook-user-agegroups/. (Last accessed in August 2019).&lt;/p&gt;</content><author><name>Olabode Anise</name></author><category term="security" /><summary type="html">Moving Beyond Set-It-And-Forget-It Privacy Settings on Social Media Mainack Mondel et al., Conference on Computers and Communication Security 2019</summary></entry><entry><title type="html">A Usability Evaluation of Let’s Encrypt and Certbot: Usable Security Done Right</title><link href="http://localhost:4000/paper%20summary/certbot/" rel="alternate" type="text/html" title="A Usability Evaluation of Let's Encrypt and Certbot: Usable Security Done Right" /><published>2020-02-01T00:00:00-05:00</published><updated>2020-02-01T00:00:00-05:00</updated><id>http://localhost:4000/paper%20summary/certbot</id><content type="html" xml:base="http://localhost:4000/paper%20summary/certbot/">&lt;p&gt;&lt;a href=&quot;https://dl.acm.org/doi/10.1145/3319535.3363220&quot;&gt;“A Usability Evaluation of Let’s Encrypt and Certbot: Usable Security Done Right”&lt;/a&gt; Tiefenau et al., &lt;em&gt;Conference on Computers and Communication Security 2019&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;When looking through the CCS proceedings, I knew that I had to find out more about the work by Tiefenau et al., purely by the title alone. What stuck out about the title in particular was the “Usable Security Done Right” subtitle. There’s been a trend in the Usable Security space of extracting a provocative quote from a survey or study participant that shows their misunderstanding of a method, technology, protocol, etc. and using that as part of the title. This paper didn’t didn’t do that but rather highlighted a certain tool that was getting things right. While my curiosity was piqued by the title, the rest of the paper definitely didn’t disappoint.&lt;/p&gt;
+
+&lt;h2 id=&quot;tls-tls-tls&quot;&gt;TLS TLS TLS&lt;/h2&gt;
+
+&lt;p&gt;Transport Layer Security (TLS) is one of the protocols that people interact with pretty much every day without thinking about it. With its importance to securing data and how frequently people interact with it, it has been a subject of a lot of usable security research. Most of that research has focused on how users perceive TLS warnings and how to potentially improve them. While understanding the user side of things is important, it leaves out the other essential and less-studied side: server configuration. That’s where &lt;a href=&quot;https://letsencrypt.org/&quot;&gt;Let’s Encrypt&lt;/a&gt; and &lt;a href=&quot;https://certbot.eff.org/&quot;&gt;Certbot&lt;/a&gt; come in. Certbot helps automates the acquisition of certificates from Let’s Encryption and the parts of the configuration on web servers.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-were-they-looking-for&quot;&gt;What were they looking for?&lt;/h2&gt;
+
+&lt;p&gt;In their work, Tiefenau and his colleagues tried to find out the advantages of using Let’s encrypt through a randomized controlled trial comparing Let’s Encrypt and Certbot to a traditional CA. More specifically they had the following research questions:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Does Certbot support its users in fulfilling the task of en-abling TLS?&lt;/li&gt;
+  &lt;li&gt;How do participants perceive Certbot’s functionality and usability?&lt;/li&gt;
+  &lt;li&gt;How can the Certbot process be improved?&lt;/li&gt;
+  &lt;li&gt;How does task framing affect how participants behave in the study?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;lets-talk-design&quot;&gt;Let’s talk design&lt;/h2&gt;
+
+&lt;h3 id=&quot;overall-design&quot;&gt;Overall Design&lt;/h3&gt;
+&lt;p&gt;The study design that Tiefenau et al. used was based on a study conducted by Krombholz et al [1]. There were two differences between the designs of the two studies 1) in Tiefenau et al.’s study they had two treatment groups which were a conventional CA and Certbot + Let’s Encrypt CA and 2) they also examined the skill of the participants by making them also perform server related actions such as proving server ownership. Another element that they added to to the study was the concept of framing. As mentioned earlier, they tried to understand if framing had an effect on how participants performed. They tried to accomplish this by creating a role-playing scenario for half of the participants were they were to imagine that they were working for a company. They made this scenario more realistic by using tailoring the URLs, usernames and passwords. When first reading the paper, I was a bit confused about which part of the study was within-subjects and which part was between-subjects but the table below really clears things up.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;/assets/images/certbot/table1.png&quot; alt=&quot;table1 1&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;tasks&quot;&gt;Tasks&lt;/h3&gt;
+&lt;p&gt;Each participant had to complete four tasks:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Task 1: The user had to SSH into the server and move web pages to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;www&lt;/code&gt; directory. This task was used to get a baseline of the participant’s Linux skill level.&lt;/li&gt;
+  &lt;li&gt;Task 2: The participant had to acquire the certificate from a traditional CA or they have to use certbot to acquire a cert and install it on the server&lt;/li&gt;
+  &lt;li&gt;Task 3: The participants in the traditional CA treatment had to install the certificate&lt;/li&gt;
+  &lt;li&gt;Task 4: Participants checked their server configuration using Qualys SSL Server Test&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Participants had to complete each of the four tasks for both treatments and were given a time limit of 2 hours for the Certbot task and 3 hours for the traditional CA task. After the completion of each task they completed a questionnaire that asked them to assess their performance and contained questions about the tasks themselves. At the conclusion of both tasks they completed a final questionnaire which compared the two options.&lt;/p&gt;
+
+&lt;h3 id=&quot;participants-and-support-channel&quot;&gt;Participants and Support Channel&lt;/h3&gt;
+&lt;p&gt;To substitute for an expert population, Tiefenau et al.used a class of computer science students. As would be expected the demographics of the group skewed male and young. About 71% of the participants had experience as a sysadmin but over half had never configured TLS before.&lt;/p&gt;
+
+&lt;p&gt;The last and the most interesting part of the study design to me was the support channel that they set up. They used this channel two counter two common issues in user studies with complex tasks: 1) participants failing early and never getting to the task of interest and 2) participants forgetting the issues they ran into when trying to complete a long procedure. In terms of participants failing early, they were able to give appropriate hints or nudges in the case a participant was having trouble SSH’ing into the server. Also, they were able to get immediate feedback when a participant ran into a problem because they would send them a message. Tiefenau et al. used a playbook to decide what help to provide to participants and what type of delay to use in responding.&lt;/p&gt;
+
+&lt;h2 id=&quot;configure-or-not-there-is-no-try&quot;&gt;Configure or not, there is no try&lt;/h2&gt;
+&lt;p&gt;Now, that we’ve detailed the study design, let’s talk about how the participants did.&lt;/p&gt;
+
+&lt;p&gt;The completion results between the traditional CA treatment and the Certbot treatment were pretty eye-opening. 28 (90%) of participants were able to deploy a certificate from Let’s Encrypt using certbot as compared to only 16 (52%) with the traditional approach. It’s pretty clear that certbot drastically improved participants ability to configure TLS on a web server. The table below shows the different points that participants failed at.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;/assets/images/certbot/table3.png&quot; alt=&quot;table 3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The results regarding the time to configure TLS followed the same trend as the completions results. The median time for Certbot task was 18 minutes compared to the 65 minutes for the traditional CA task.&lt;/p&gt;
+
+&lt;p&gt;A finding that the authors found surprising was that participants performed well with security and CA parts; however, they struggled with the tasks that were specific to configuring Apache which was used as the webserver. These problems ranged from being able to perform the ownership verification to not knowing enable the SSL module of Apache2.&lt;/p&gt;
+
+&lt;p&gt;In the comparison survey, the combination of Let’s Encrypt and Certbot won out in every category except transparency. The reason for this was most likely because of the automation that Certbot provides potentially masking steps in the process.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;/assets/images/certbot/figure2.png&quot; alt=&quot;figure 2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In terms of framing, they didn’t not find any difference in the behavior of participants.&lt;/p&gt;
+
+&lt;h2 id=&quot;tell-me-whats-good-or-bad&quot;&gt;Tell me what’s good (or bad)&lt;/h2&gt;
+
+&lt;h3 id=&quot;the-bad&quot;&gt;The bad&lt;/h3&gt;
+&lt;p&gt;One of the negative things called out in the post-task questionnaire and the comparison survey was that actions taken by Certbot weren’t transparent to the user. One participant in particular had the following remark:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;everything was easy,but […] Certbot is not transparent to me. I do not know what it ac-tually did and the whole process inside, for me it is like (a) blackbox”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The authors point out that Certbot has a verbose option but none of the participants chose to use it. Nevertheless, it seems like the default verbosity should be increased.&lt;/p&gt;
+
+&lt;p&gt;The next thing that users commented on was that Certbot didn’t offer more advanced security configurations. The authors counterpoint to this was that Certbot has to be general to support different use cases and administrators and it is on the right path; however, they do suggest that future work should look into the tradeoff between security and generalizability.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-good&quot;&gt;The good&lt;/h3&gt;
+
+&lt;p&gt;The authors pointed out that the simplicity of the Certbot is one of the key factors of it success and most importantly it didn’t require to have knowledge about the process.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Certbot applied the knowledge of its experts auto-matically with little need for specialized knowledge, by guiding the user through the process using a dialog-like approach instead of requiring multiple commands on the command line.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The other part of it’s usability as stated by the authors was that it used safe defaults and automated several steps while only introducing two new ones.&lt;/p&gt;
+
+&lt;h2 id=&quot;wrap-up&quot;&gt;Wrap Up&lt;/h2&gt;
+
+&lt;p&gt;The combination of Let’s Encrypt and Certbot show that when “administrator-centered engineering” is combined with simplicity problems that are long considered hard to solve at scale can be become significantly easier&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+&lt;p&gt;[1] Katharina Krombholz, Wilfried Mayer, Martin Schmiedecker, and Edgar R. Weippl.”I Have No Idea What I’m Doing” - On the Usability of Deploying HTTPS. In 26th USENIX Security Symposium, USENIX Security 2017, 2017.&lt;/p&gt;</content><author><name>Olabode Anise</name></author><category term="security" /><summary type="html">“A Usability Evaluation of Let’s Encrypt and Certbot: Usable Security Done Right” Tiefenau et al., Conference on Computers and Communication Security 2019</summary></entry><entry><title type="html">“I don’t see why I would ever want to use it”: Analyzing the Usability of Popular Smartphone Password Managers</title><link href="http://localhost:4000/paper%20summary/usability-smartphone-pm/" rel="alternate" type="text/html" title="“I don’t see why I would ever want to use it”: Analyzing the Usability of Popular Smartphone Password Managers" /><published>2020-01-25T00:00:00-05:00</published><updated>2020-01-25T00:00:00-05:00</updated><id>http://localhost:4000/paper%20summary/usability-smartphone-pm</id><content type="html" xml:base="http://localhost:4000/paper%20summary/usability-smartphone-pm/">&lt;p&gt;&lt;a href=&quot;https://dl.acm.org/doi/10.1145/3319535.3354192&quot;&gt;“I don’t see why I would ever want to use it”: Analyzing the Usability of Popular Smartphone Password Managers&lt;/a&gt; Seiler-Hwang et al., &lt;em&gt;Conference on Computers and Communication Security 2019&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Moving on from SOUPS, I took a look at the &lt;a href=&quot;https://sigsac.org/ccs/CCS2019/index.php/proceedings/&quot;&gt;proceedings&lt;/a&gt; from the Conference on Computers and Communication Security (CCS) and the first paper to catch my eye was the work by Seiler-Wang et al. The thing that stuck out about their work was that they studied a particular security tool that was popularized on desktops, in this case password managers (PM), and sought to understand the usability issues when used on a mobile device.&lt;/p&gt;
 

@@ -18,4 +18,14 @@ var store = [{
         "excerpt":"“I don’t see why I would ever want to use it”: Analyzing the Usability of Popular Smartphone Password Managers Seiler-Hwang et al., Conference on Computers and Communication Security 2019 Moving on from SOUPS, I took a look at the proceedings from the Conference on Computers and Communication Security (CCS) and...","categories": ["paper summary"],
         "tags": ["security"],
         "url": "http://localhost:4000/paper%20summary/usability-smartphone-pm/",
+        "teaser":null},{
+        "title": "A Usability Evaluation of Let's Encrypt and Certbot: Usable Security Done Right",
+        "excerpt":"“A Usability Evaluation of Let’s Encrypt and Certbot: Usable Security Done Right” Tiefenau et al., Conference on Computers and Communication Security 2019 When looking through the CCS proceedings, I knew that I had to find out more about the work by Tiefenau et al., purely by the title alone. What...","categories": ["paper summary"],
+        "tags": ["security"],
+        "url": "http://localhost:4000/paper%20summary/certbot/",
+        "teaser":null},{
+        "title": "Moving Beyond Set-It-And-Forget-It Privacy Settings on Social Media",
+        "excerpt":"Moving Beyond Set-It-And-Forget-It Privacy Settings on Social Media Mainack Mondel et al., Conference on Computers and Communication Security 2019 The last paper that I looked at from CCS is a bit different than the four previous papers that I’ve summarized that have focused on the usability of libraries, methods, and...","categories": ["paper summary"],
+        "tags": ["security"],
+        "url": "http://localhost:4000/paper%20summary/beyond-set-it-and-forget-it/",
         "teaser":null}]

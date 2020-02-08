@@ -1,0 +1,644 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.17.2 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Moving Beyond Set-It-And-Forget-It Privacy Settings on Social Media - Olabode Anise</title>
+<meta name="description" content="Moving Beyond Set-It-And-Forget-It Privacy Settings on Social Media Mainack Mondel et al., Conference on Computers and Communication Security 2019">
+
+
+  <meta name="author" content="Olabode Anise">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Olabode Anise">
+<meta property="og:title" content="Moving Beyond Set-It-And-Forget-It Privacy Settings on Social Media">
+<meta property="og:url" content="http://localhost:4000/paper%20summary/beyond-set-it-and-forget-it/">
+
+
+  <meta property="og:description" content="Moving Beyond Set-It-And-Forget-It Privacy Settings on Social Media Mainack Mondel et al., Conference on Computers and Communication Security 2019">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-02-08T00:00:00-05:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/paper%20summary/beyond-set-it-and-forget-it/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Olabode Anise",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Olabode Anise Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Olabode Anise
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/" >About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/posts/" >Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/assets/resume.pdf" >Resume</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/anise-olabode-michigan.jpg" alt="Olabode Anise" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Olabode Anise</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>An irrational Steelers fan who happens to care about security and data.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Michigan</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="http://olabodeanise.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/JustSayO" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+          
+        
+          
+            <li><a href="https://github.com/oanise93" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Moving Beyond Set-It-And-Forget-It Privacy Settings on Social Media">
+    <meta itemprop="description" content="Moving Beyond Set-It-And-Forget-It Privacy Settings on Social Media Mainack Mondel et al., Conference on Computers and Communication Security 2019">
+    <meta itemprop="datePublished" content="February 08, 2020">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Moving Beyond Set-It-And-Forget-It Privacy Settings on Social Media
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  8 minute read
+
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p><a href="https://www.cs.uic.edu/~elena/pubs/mondal-ccs19.pdf">Moving Beyond Set-It-And-Forget-It Privacy Settings on Social Media</a> Mainack Mondel et al., Conference on Computers and Communication Security 2019</p>
+
+<p>The last paper that I looked at from CCS is a bit different than the four previous papers that I’ve summarized that have focused on the usability of libraries, methods, and technologies. This work by Mandal and his collaborators centers around user privacy on Facebook. There is also a bit of machine learning, but I promise you there won’t be too much math. With that said, let’s dig in!</p>
+
+<h2 id="privacy-on-facebook">Privacy on Facebook</h2>
+
+<p>The main thread throughout the paper is that a user’s preference with whom to share data (in this case Facebook posts) may change over time. In the case of Facebook, the number of friends a user has now could be many times higher than when a particular post was first made. As a result, the privacy settings that were originally used on a post may not be appropriate given a user’s new connections.</p>
+
+<p>As a primer for those that don’t use Facebook, Facebook allows users to control who sees their posts through the Audience Selector. Mainack et al., do a great job in comparing it to traditional role-based access control where the roles are as follows:</p>
+
+<ul>
+  <li><strong>public</strong>: anyone can see it</li>
+  <li><strong>friends+</strong>: the user’s Friends plus the friends of some/all of those friends</li>
+  <li><strong>friends</strong>: the user’s Facebook friends</li>
+  <li><strong>custom</strong>: a user-specified subset of Facebook friends</li>
+  <li><strong>only me</strong>: only the user</li>
+</ul>
+
+<h2 id="goals">#Goals</h2>
+<p>In the work by Mandal et al., they try to build an understanding of Facebook privacy attitudes and and practices and how those may change over time through a user study with the goal of translating those findings into a human-in the-loop privacy management system.</p>
+
+<h2 id="user-study">User Study</h2>
+
+<p>In addition to understanding the privacy practices and attitudes of Facebook users, they conducted the user study to get data to be used later to test a predictive model.</p>
+
+<h3 id="recruitment-and-demographics">Recruitment and Demographics</h3>
+<p>They recruited participants using Amazon MTurk who were at least 18 years of age and located in North America. In total, they had 101 participants. Over 2/3 of their participants identified as female. 46% of participants fell in the 25-34 age range which was consistent with the overall age distribution of Facebook users in 2018 [1]. 87% of participants identified as white. In terms of Facebook usage, approximately 90% of participants reported using Facebook daily. More info about their usage can be found in the table below.</p>
+
+<p style="text-align: center;"><img src="/assets/images/set-it-and-forget-it/table2.png" alt="table 2" /></p>
+
+<h3 id="getting-data-and-labels">Getting Data and Labels</h3>
+<p>In order to collect participant data, they had each participant download a browser extension. The extension collects an anonymized version of their full Facebook timeline as well as their Facebook activity log. This was accomplished by the browser extension sharing their session cookie with a server at University of Chicago which used Selenium to download the relevant parts of the participant’s timeline and activity log. In the paper, Mandal et al. provide more detail than I can put in this summary about how they try to collect the data in privacy preserving way. A diagram of the protocol that they used can be seen in the figure below.</p>
+
+<p style="text-align: center;"><img src="/assets/images/set-it-and-forget-it/figure1.png" alt="figure 1" /></p>
+
+<p>After they collected each participant’s data, they did a two-part survey. In Part 1, they randomly selected five posts from a participants timeline. Then they showed them the posts current privacy settings and if they had changed the posts settings or considered changing them. Last, they asked if the participant wanted to change those settings or keep them the same and why. In part two, they used those same posts but they showed six of the participant’s Facebook friends who could see the post. They also asked whether or not the participant wanted to continue sharing that post with that person or if they didn’t care. The six friends were picked from six categories of interaction where interaction was measured through things like number of words exchanges via posts and comments and the number of reactions the participant and their friend gave each other on posts. More information on those six categories can be found in the table below.</p>
+
+<p style="text-align: center;"><img src="/assets/images/set-it-and-forget-it/table2.png" alt="table 2" /></p>
+
+<p>In addition to the post experiment, participants completed a survey which asked about their overall Facebook usage and their use of Facebook’s privacy features.</p>
+
+<h3 id="findings-from-the-data">Findings from the Data</h3>
+<p>In examining the longitudinal data, they found that friends (the default setting) was the most used privacy setting. The reason that this is important is that because the number of friends each participant had increased over time they were therefore sharing these older posts with more and more people. Another interesting but intuitive finding from the survey they administered was that a participant’s life changes impacted their privacy settings. The most common personal changes that were cited were relationship changes and childbirth.</p>
+
+<p>Shifting gears to the two post experiments, Mandal et al. found that the majority (~75%) of posts didn’t require any changes, but 63.5 participants wanted to change the privacy settings on at least one post. Interestingly enough, the changes that participants wanted to make were roughly split between increasing and decreasing the audience size.</p>
+
+<p>Mandal et al. also explored the correlation between participants’ privacy preferences and the interactions they had with a particular user. They found that participants were more likely to share posts with friends whom they had a high degree of recent interactions with than those who they had not recently interacted with. That makes a lot of sense; however, the inverse wasn’t true. Participants also wanted to “definitely keep sharing” posts with 35% of the friends who they hadn’t had any interaction with in the past year. When they examined the qualitative data that was collected, Mandal and his collaborators found that 35% fell into the categories of family member or close friend.</p>
+
+<h2 id="lets-do-some-prediction">Let’s Do Some prediction</h2>
+<p>As mentioned earlier, the ultimate goal was to help users have the right privacy settings for posts that were made in the past no matter how old they are. Because the amount of posts can be large the only reasonable course of action would be to use some type of automated system. Cue Machine Learning!</p>
+
+<h3 id="problem-formulation">Problem formulation</h3>
+<p>Mandal et al. formulated the problem as binary classification where the two classes were <em>limit sharing</em> and <em>do not limit sharing</em>. They also stress that they would want this to be a human-in-the loop system and not a “fully automatic post manager.”</p>
+
+<h3 id="data-and-features">Data and Features</h3>
+<p>The features that they used were composed of information gathered through the survey responses, user information, posts statistics, content, and audience. For post statistics, they used things like the number of likes and comments, whether or not another user was tagged, etc. They also used NLP methods to extract content-level features from the text of posts.</p>
+
+<h3 id="evaluation">Evaluation</h3>
+<p>Mandal et al. evaluated several models such as Decision Trees, Logistic Regression, and Support Vector Machines. The results of these models were tested against two baselines. The first was a random classifier where they randomly show posts to users. The second baseline uses the level of interaction between the user and their friend and predicts <em>limit sharing</em> for friends with low levels of interaction.</p>
+
+<p>For their experiments, they used two datasets. One called the <strong>post dataset</strong> containing 389 posts and another called the <strong>friend-post dataset</strong> containing 2336 labels. Each dataset has different goals. In the <strong>post dataset</strong>, they try to predict whether a user should decrease the audience of a post. In this <strong>friend-post dataset</strong>, they try to predict whether or not a specific friend’s access to the post should be removed. The difference in the datasets is that the <strong>friend-post dataset</strong> contains six times as much data (and therefore labels) because it has the decisions made for the six friends that were randomly shown.</p>
+
+<p>The metrics that they used for evaluation were the precision and for <em>limit sharing</em>. In addition, they also include <a href="https://en.wikipedia.org/wiki/Evaluation_measures_(information_retrieval)#Precision_at_K">precision at K</a> which is the precision after predicting the top K results as positive. They included precision at K because they could vary the number of posts shown to a user.</p>
+
+<h3 id="results">Results</h3>
+<p>On the <strong>friend-post dataset</strong>, they found that the XGBoost model had the highest precision at K performing the best for even low values of K. In examining the precision-recall curve, they found that when K was set to 30  they found that the precision-recall area under the curve (PR AUC) was 0.493 which was much higher than the 0.118 PR AUC achieved by the interaction baseline model. The reason 30 was used as the value of K was that it corresponds with the underlying distribution of <em>limit sharing</em>. Mandal et al. also tried to find the most predictive features. In the table below, you’ll see the top 10 features for the XGBoost model.</p>
+
+<p style="text-align: center;"><img src="/assets/images/set-it-and-forget-it/table4.png" alt="table 4" /></p>
+
+<p>For both datasets, they analyzed which posts their classifier was wrong. One of their findings was that a significant number of misclassified posts were those that linked to external content like images or videos. Mandal et al. didn’t collect features specific to a posts’ external content for privacy reasons and because it wasn’t supported by current literature. They also found that another source of inaccuracy for misclassified posts (16%) was that they didn’t have features specific to participant’s friends. An example provided in the paper pertaining to why a participant would share a post with a particular friend was “I think she likes articles about animals.”</p>
+
+<h2 id="wrapping-up">Wrapping Up</h2>
+<p>In this work, Mandal et al. find that for Facebook users access control is usually set-it and forget-it but that has longer term implications as a user’s life changes, the number of posts they have increase, and the number of friends they have rises. Moreover, predicting whether or not to limit sharing of a post with a particular through the use of machine learning models is more effective than simply relying on the interaction between users.</p>
+
+<h2 id="references">References</h2>
+
+<p>[1] Statista. 2018. Number of Facebook users by age in the U.S. as of January 2018
+(in millions). https://www.statista.com/statistics/398136/us-facebook-user-agegroups/. (Last accessed in August 2019).</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#security" class="page__taxonomy-item" rel="tag">security</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#paper-summary" class="page__taxonomy-item" rel="tag">paper summary</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-08T00:00:00-05:00">February 08, 2020</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Moving+Beyond+Set-It-And-Forget-It+Privacy+Settings+on+Social+Media%20http%3A%2F%2Flocalhost%3A4000%2Fpaper%2520summary%2Fbeyond-set-it-and-forget-it%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fpaper%2520summary%2Fbeyond-set-it-and-forget-it%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fpaper%2520summary%2Fbeyond-set-it-and-forget-it%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/paper%20summary/certbot/" class="pagination--pager" title="A Usability Evaluation of Let’s Encrypt and Certbot: Usable Security Done Right
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/paper%20summary/certbot/" rel="permalink">A Usability Evaluation of Let’s Encrypt and Certbot: Usable Security Done Right
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  7 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">“A Usability Evaluation of Let’s Encrypt and Certbot: Usable Security Done Right” Tiefenau et al., Conference on Computers and Communication Security 2019
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/paper%20summary/usability-smartphone-pm/" rel="permalink">“I don’t see why I would ever want to use it”: Analyzing the Usability of Popular Smartphone Password Managers
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  5 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">“I don’t see why I would ever want to use it”: Analyzing the Usability of Popular Smartphone Password Managers Seiler-Hwang et al., Conference on Computers a...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/paper%20summary/keepers/" rel="permalink">Keepers of the Machines: Examining How System Administrators Manage Software Updates For Multiple Machines
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  8 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Keepers of the Machines: Examining How System
+Administrators Manage Software Updates Li et al., SOUPS 2019
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/paper%20summary/usability-smells/" rel="permalink">Usability Smells: An Analysis of Developers’ Struggle With Crypto Libraries
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Usability Smells: An Analysis of Developers’ Struggle With Crypto Libraries Patnaik et al., SOUPS 2019
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Olabode Anise. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
