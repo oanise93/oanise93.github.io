@@ -1,6 +1,6 @@
 ---
 layout: single
-title: \"If HTTPS Were Secure, I Wouldn't Need 2FA\" - End User and Administrator Mental Models of HTTPS'
+title: \"If HTTPS Were Secure, I Wouldn't Need 2FA\" - End User and Administrator Mental Models of HTTPS
 categories: [paper summary]
 tags: [security]
 ---
