@@ -4,7 +4,7 @@ title: \"If HTTPS Were Secure, I Wouldn't Need 2FA\" - End User and Administrato
 categories: [paper summary]
 tags: [security]
 header:
-  teaser: /assets/if-https-were-secure/figure2.png
+  teaser: /assets/images/if-https-were-secure/figure2.png
 ---
 
 ["If HTTPS Were Secure, I Wouldn't Need 2FA" - End User and Administrator Mental Models of HTTPS](https://publications.cispa.saarland/2788/) Katharina Krombholz et al., IEEE Symposium on Security and Privacy 2019
