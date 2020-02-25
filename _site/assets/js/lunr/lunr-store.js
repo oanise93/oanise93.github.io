@@ -33,4 +33,4 @@ var store = [{
         "excerpt":"“If HTTPS Were Secure, I Wouldn’t Need 2FA” - End User and Administrator Mental Models of HTTPS Katharina Krombholz et al., IEEE Symposium on Security and Privacy 2019 In the short time that I’ve recommitted to reading Usable Security papers, I found this paper my Krombholz et al., to be...","categories": ["paper summary"],
         "tags": ["security"],
         "url": "http://localhost:4000/paper%20summary/if-https-were-secure/",
-        "teaser":null}]
+        "teaser":"http://localhost:4000/assets/if-https-were-secure/figure2.png"}]
