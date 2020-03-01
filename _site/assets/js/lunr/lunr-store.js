@@ -33,4 +33,9 @@ var store = [{
         "excerpt":"“If HTTPS Were Secure, I Wouldn’t Need 2FA” - End User and Administrator Mental Models of HTTPS Katharina Krombholz et al., IEEE Symposium on Security and Privacy 2019 In the short time that I’ve recommitted to reading Usable Security papers, I found this paper my Krombholz et al., to be...","categories": ["paper summary"],
         "tags": ["security"],
         "url": "http://localhost:4000/paper%20summary/if-https-were-secure/",
-        "teaser":"http://localhost:4000/assets/images/if-https-were-secure/figure2.png"}]
+        "teaser":"http://localhost:4000/assets/images/if-https-were-secure/figure2.png"},{
+        "title": "Your Secrets Are Safe: How Browsers’ Explanations Impact Misconceptions About Private Browsing Mode",
+        "excerpt":"Your Secrets Are Safe: How Browsers’ Explanations Impact Misconceptions About Private Browsing Mode Yuxi Wu et al., World Wide Web Conference 2018 With this paper, I’m taking it back to 2018. I found this paper by Yuxi Wu et al. particularly interesting because it centers around a feature of browsers...","categories": ["paper summary"],
+        "tags": ["security"],
+        "url": "http://localhost:4000/paper%20summary/your-secrets-are-safe/",
+        "teaser":"http://localhost:4000/assets/images/your-secrets-are-safe/incognito.png"}]

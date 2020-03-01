@@ -1,0 +1,634 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.17.2 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Your Secrets Are Safe: How Browsers’ Explanations Impact Misconceptions About Private Browsing Mode - Olabode Anise</title>
+<meta name="description" content="Your Secrets Are Safe: How Browsers’ Explanations Impact Misconceptions About Private Browsing Mode Yuxi Wu et al., World Wide Web Conference 2018">
+
+
+  <meta name="author" content="Olabode Anise">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Olabode Anise">
+<meta property="og:title" content="Your Secrets Are Safe: How Browsers’ Explanations Impact Misconceptions About Private Browsing Mode">
+<meta property="og:url" content="http://localhost:4000/paper%20summary/your-secrets-are-safe/">
+
+
+  <meta property="og:description" content="Your Secrets Are Safe: How Browsers’ Explanations Impact Misconceptions About Private Browsing Mode Yuxi Wu et al., World Wide Web Conference 2018">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/your-secrets-are-safe/incognito.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2020-02-29T00:00:00-05:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/paper%20summary/your-secrets-are-safe/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Olabode Anise",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Olabode Anise Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Olabode Anise
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/" >About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/posts/" >Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/assets/resume.pdf" >Resume</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/anise-olabode-michigan.jpg" alt="Olabode Anise" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Olabode Anise</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>An irrational Steelers fan who happens to care about security and data.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Michigan</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="http://olabodeanise.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/JustSayO" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+          
+        
+          
+            <li><a href="https://github.com/oanise93" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Your Secrets Are Safe: How Browsers’ Explanations Impact Misconceptions About Private Browsing Mode">
+    <meta itemprop="description" content="Your Secrets Are Safe: How Browsers’ Explanations Impact Misconceptions About Private Browsing Mode Yuxi Wu et al., World Wide Web Conference 2018">
+    <meta itemprop="datePublished" content="February 29, 2020">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Your Secrets Are Safe: How Browsers’ Explanations Impact Misconceptions About Private Browsing Mode
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  6 minute read
+
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p><a href="https://www.blaseur.com/papers/www18privatebrowsing.pdf">Your Secrets Are Safe: How Browsers’ Explanations Impact Misconceptions About Private Browsing Mode</a> Yuxi Wu et al., World Wide Web Conference 2018</p>
+
+<p>With this paper, I’m taking it back to 2018. I found this paper by Yuxi Wu et al. particularly interesting because it centers around a feature of browsers that a good amount of people use and/or is sometimes recommended as a way of staying safe on the internet: “private browsing.” In their work, they focus specifically on the disclosures users see when they open a new  window in a browser’s <em>private mode</em> and some of the misconceptions users have about the privacy guarantees when using these modes.</p>
+
+<figure class="">
+  <img src="/assets/images/your-secrets-are-safe/incognito.png" alt="t" />
+  
+    <figcaption>
+      Google Chrome’s Incognito Mode Disclosure
+
+    </figcaption></figure>
+
+<h2 id="setting-the-stage">Setting the Stage</h2>
+<p>If you’re not familiar with private mode, it’s a feature that each of the major browsers has that is geared towards protecting users against <em>local privacy threats</em> such as someone seeing your browser history on a shared device. Each browser calls their version of private mode something different but they are more or less the same. When using private mode, a user’s browser history is not stored after a session is closed, cookies are cleared after the session is closed, and temporary files are deleted. To reiterate, private mode does not protect against remote threats. The two exceptions to certain degrees are Opera’s Free VPN that has to be enabled by the user and Firefox’s <a href="https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop">Enhanced Tracking Protection</a>.</p>
+
+<h2 id="meet-the-browser-onyx">Meet the browser: Onyx</h2>
+<p>To understand the misconceptions users have surrounding private browsing Wu et al. designed an experiment where they had users imagine a new browser called Onyx. With this “new browser”, they presented a simulated browser window where they used the disclosure for each of the following browsers: Brave, Chrome, Edge, Firefox, Opera, Safari and a control that vaguely described some privacy guarantees. They also tested the mobile versions of each of the majors browsers except Edge. Their experiment followed a between subject’s design where each study participant only saw one of the 13 disclosure. If you’re doing some math and you’re like that doesn’t add up to 13, you’d be right. Wu al. tested two versions of the Chrome browser (59 and 60) because at the time Google had recently changed their disclosure.</p>
+
+<figure class="">
+  <img src="/assets/images/your-secrets-are-safe/table1.png" alt="" />
+  
+    <figcaption>
+      Portion of Table 1
+
+    </figcaption></figure>
+
+<p>After showing each participant was shown the disclosure for their condition, they were presented with twenty browsing scenarios. 16 of these scenarios were designed to measure the differences participants perceived between private mode and standard mode. In the other four scenarios, participants were asked multiple choice questions in which they were asked to make relative comparisons between the two modes.  An example question is “How will the speed at which webpages load compare in standard vs private browsing modes?” After seeing each scenario, participants were asked a yes or no question and then asked how confident they were in their answers (Very Confident, Confident, Somewhat confident, Not at all confident). Finally, they were asked why they chose a particular answer.</p>
+
+<p>At the very end of each session, Wu et al. collected demographic information, information on their browser usage and usage of private mode.</p>
+
+<p>Specifically, they set out to answer the following research questions:</p>
+
+<ol>
+  <li>How do each of the six desktop disclosures compare to the control?</li>
+  <li>How do mobile versions of disclosures compare to the disclosure in the same browser’s desktop version</li>
+  <li>How does the recently redesigned Chrome disclosure compare to the previous disclosure.</li>
+</ol>
+
+<h2 id="results">Results</h2>
+<p>In total, they recruited 460 participants from Amazon Mechanical Turk and found that approximately ~97% of participants used Google Chrome for desktop browsing and that 80% of participants used private browsing at least some of the time. They found that the top six reasons users used private browsing were 1) hide browsing, especially visits to adult websites 2) prevent targeted ads and search suggestions 3) achieve “safer” browsing 4) prevent browsers from saving login-related information 5) avoid cookies 6) accommodate intentional or unintentional use by others.</p>
+
+<p>To understand the impact each of the disclosures had on a participant’s understanding of private mode, Wu et al. created a correctness and confidence score. The correctness score was just the total number of scenarios that the participant answered correctly excluding the six scenarios where the correct answer was browser dependent. The confidence score was the sum of the confidence ratings for the same 14 scenarios. Using those two scores they created regression models using demographic and study-related characteristics. In the end, they found that most of the disclosures had no significant impact on a participant’s understanding of what private mode does or doesn’t do. Specifically, only the participants who were shown one of the two versions of Chrome for desktop disclosure answered more correctly than the control group. They also found that the mobile disclosures were less successful than the control.</p>
+
+<h3 id="non-misconceptions">(Non-)Misconceptions</h3>
+<p>Wu et al. denoted scenarios where over 20% of participants across disclosures answered the question about private mode incorrectly as misconceptions. While they found there were a lot of misconceptions there were a good amount of scenarios that almost all participants got correct. Some examples are 97% of participants correctly realized that files downloaded in private mode would remain on the computer after the session has ended and 90% of participants knew that photos viewed in the browser during private mode would not be cached for quicker loading during future sessions. On the flip side, participants both over and underestimated the protection private mode offers. The most notable overestimate was that 22%, 37%, and 23% of participants respectively believed that ISPs, employers and the government could not track them when they used private mode. In terms of underestimates, 30% of participants incorrectly thought that their searches could be associated across sessions.</p>
+
+<h2 id="bringing-it-to-2020">Bringing it to 2020.</h2>
+<p>Since this research was conducted in 2017, I decided to take a look at the disclosures for Brave, Safari, Chrome and Firefox to see if they had made any significant changes and if so what. What I found is that each of the four browsers had changed their disclosures for both mobile and desktop versions except for Safari. In the case of Chrome, Google has opted to use the same disclosure across both the mobile and desktop version which I think is a positive change.  By using the same disclosure for both versions, it’s possible to rule out that misconceptions were derived simply from seeing a different version on a different platform.  Overall, the mobile versions of each of the browsers tested in 2017 had far less text describing what private mode did/did not do. While that still proves to be the case, Brave-Mobile (and Chrome-Mobile by default) has made massive improvements in terms of providing additional information on the privacy guarantees when using private mode on their mobile browser.</p>
+
+<figure class="">
+  <img src="/assets/images/your-secrets-are-safe/firefox.png" alt="" />
+  
+    <figcaption>
+      Disclosure for Firefox v73.0.1
+
+    </figcaption></figure>
+
+<p>I’d be remiss if I didn’t mention the changes Firefox has made. As you can see in the figure above, Firefox provides users a link to a page that dispels some of the myths about private browsing. I think just having a link is a big step in the right direction and gives users an easily accessible resource to get more information on what guarantees they have when using private mode even if it takes a bit more work.</p>
+
+<h2 id="wrapping-up">Wrapping Up</h2>
+<p>It seems like most browsers are making efforts to improve the disclosures users see when entering private mode. Nevertheless, there are still some areas that they could improve on. It would be interesting to see if the results by Wu et al. would be the same given the current set of disclosures.</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#security" class="page__taxonomy-item" rel="tag">security</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#paper-summary" class="page__taxonomy-item" rel="tag">paper summary</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-29T00:00:00-05:00">February 29, 2020</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Your+Secrets+Are+Safe%3A+How+Browsers%E2%80%99+Explanations+Impact+Misconceptions+About+Private+Browsing+Mode%20http%3A%2F%2Flocalhost%3A4000%2Fpaper%2520summary%2Fyour-secrets-are-safe%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fpaper%2520summary%2Fyour-secrets-are-safe%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fpaper%2520summary%2Fyour-secrets-are-safe%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/paper%20summary/if-https-were-secure/" class="pagination--pager" title=""If HTTPS Were Secure, I Wouldn’t Need 2FA" - End User and Administrator Mental Models of HTTPS
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/if-https-were-secure/figure2.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/paper%20summary/if-https-were-secure/" rel="permalink">"If HTTPS Were Secure, I Wouldn’t Need 2FA" - End User and Administrator Mental Models of HTTPS
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  6 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">“If HTTPS Were Secure, I Wouldn’t Need 2FA” - End User and Administrator Mental Models of HTTPS Katharina Krombholz et al., IEEE Symposium on Security and Pr...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/paper%20summary/beyond-set-it-and-forget-it/" rel="permalink">Moving Beyond Set-It-And-Forget-It Privacy Settings on Social Media
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  8 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Moving Beyond Set-It-And-Forget-It Privacy Settings on Social Media Mainack Mondel et al., Conference on Computers and Communication Security 2019
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/paper%20summary/certbot/" rel="permalink">A Usability Evaluation of Let’s Encrypt and Certbot: Usable Security Done Right
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  7 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">“A Usability Evaluation of Let’s Encrypt and Certbot: Usable Security Done Right” Tiefenau et al., Conference on Computers and Communication Security 2019
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/paper%20summary/usability-smartphone-pm/" rel="permalink">“I don’t see why I would ever want to use it”: Analyzing the Usability of Popular Smartphone Password Managers
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  5 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">“I don’t see why I would ever want to use it”: Analyzing the Usability of Popular Smartphone Password Managers Seiler-Hwang et al., Conference on Computers a...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Olabode Anise. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
