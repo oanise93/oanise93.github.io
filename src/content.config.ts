@@ -10,6 +10,15 @@ const blog = defineCollection({
     updatedDate: z.coerce.date().optional(),
     categories: z.array(z.string()).default([]),
     tags: z.array(z.string()).default([]),
+    paper: z
+      .object({
+        title: z.string(),
+        authors: z.string(),
+        venue: z.string().optional(),
+        year: z.union([z.string(), z.number()]).optional(),
+        url: z.string().url().optional(),
+      })
+      .optional(),
     draft: z.boolean().default(false),
     legacyPath: z.string().optional(),
     teaser: z.string().optional(),

@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import PageHero from "../../components/PageHero.astro";
+import TagList from "../../components/TagList.astro";
 import TimelineEntry from "../../components/TimelineEntry.astro";
 import SiteLayout from "../../layouts/SiteLayout.astro";
 
@@ -33,6 +34,7 @@ const groupedPosts = Array.from(groups.entries());
                   <a class="underline decoration-transparent" href={`/blog/${post.id}/`}>{post.data.title}</a>
                 </h2>
                 {post.data.description && <p class="text-base text-[var(--color-primary-muted)]">{post.data.description}</p>}
+                <TagList tags={post.data.tags} className="pt-1" />
               </article>
             ))}
           </div>

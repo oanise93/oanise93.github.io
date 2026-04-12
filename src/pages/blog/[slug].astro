@@ -1,7 +1,11 @@
 ---
 import { getCollection, render } from "astro:content";
 import PageHero from "../../components/PageHero.astro";
+import PaperMeta from "../../components/PaperMeta.astro";
+import ReadingProgress from "../../components/ReadingProgress.astro";
+import TagList from "../../components/TagList.astro";
 import SiteLayout from "../../layouts/SiteLayout.astro";
+import { getReadingTime } from "../../lib/reading-time";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog", ({ data }) => !data.draft);
@@ -19,12 +23,21 @@ const date = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
   timeZone: "UTC",
 }).format(post.data.pubDate);
+const readingTime = getReadingTime(post.body);
 ---
 
 <SiteLayout title={post.data.title} description={post.data.description ?? `Writing by Olabode Anise, published ${date}.`}>
-  <PageHero eyebrow={date} title={post.data.title} />
+  <ReadingProgress />
+  <PageHero eyebrow={date} title={post.data.title}>
+    <div class="flex flex-col gap-3 pt-2">
+      <p class="text-sm text-[var(--color-primary-soft)]">{readingTime.label}</p>
+      <TagList tags={post.data.tags} />
+    </div>
+  </PageHero>
 
-  <article class="site-container pb-20">
+  {post.data.paper && <PaperMeta paper={post.data.paper} />}
+
+  <article class="site-container pb-20" data-reading-progress-scope>
     <div class="prose-content">
       <Content />
     </div>

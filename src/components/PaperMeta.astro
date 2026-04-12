@@ -1,0 +1,39 @@
+---
+interface Paper {
+  title: string;
+  authors: string;
+  venue?: string;
+  year?: string | number;
+  url?: string;
+}
+
+interface Props {
+  paper: Paper;
+}
+
+const { paper } = Astro.props;
+const source = [paper.venue, paper.year].filter(Boolean).join(", ");
+---
+
+<section class="site-container -mt-8 pb-12">
+  <aside class="border-l border-[var(--color-accent)] pl-4">
+    <p class="text-sm text-[var(--color-primary-soft)]">Paper</p>
+    <h2 class="mt-2 max-w-3xl text-lg font-normal leading-snug text-[var(--color-primary)]">
+      {paper.title}
+    </h2>
+    <div class="mt-3 space-y-1 text-base text-[var(--color-primary-muted)]">
+      <p>{paper.authors}</p>
+      {source && <p>{source}</p>}
+    </div>
+    {paper.url && (
+      <a
+        class="mt-4 inline-flex rounded-md border border-[var(--color-border)] px-3 py-2 text-sm text-[var(--color-primary)] no-underline"
+        href={paper.url}
+        target="_blank"
+        rel="noreferrer"
+      >
+        Read paper
+      </a>
+    )}
+  </aside>
+</section>
