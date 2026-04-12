@@ -1,0 +1,32 @@
+---
+interface Props {
+  start: string;
+  end?: string;
+  active?: boolean;
+  showLine?: boolean;
+}
+
+const { start, end, active = false, showLine = true } = Astro.props;
+const markerClass = active ? "bg-[var(--color-accent)]" : "bg-[var(--color-primary-soft)]";
+---
+
+<section class="relative grid grid-cols-1 gap-2 pl-5 md:grid-cols-[8rem_1fr] md:gap-6 md:pl-2">
+  {showLine && <div class="timeline-line absolute bottom-0 left-0 top-3 w-px md:left-2"></div>}
+
+  <div class="relative z-10 mb-1 flex h-6 items-center gap-3 md:mb-10">
+    <span class={`-ml-[3px] h-[7px] w-[7px] shrink-0 rounded-full ${markerClass}`}></span>
+    <p class="text-sm text-[var(--color-primary-muted)]">
+      {end ? (
+        <>
+          <span class="md:hidden">{start}<span class="mx-1.5 text-[var(--color-primary-soft)]">→</span></span>{end}
+        </>
+      ) : (
+        start
+      )}
+    </p>
+  </div>
+
+  <div class="min-w-0 pb-10 md:pb-12">
+    <slot />
+  </div>
+</section>

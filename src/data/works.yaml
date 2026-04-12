@@ -1,0 +1,30 @@
+- id: figma
+  company: Figma
+  role: Data Science Lead
+  periodStart: Now
+  website: https://figma.com
+  logoText: Fi
+  current: true
+  bullets:
+    - Lead three Data Science teams across AI, infrastructure, applied research, and data platform work.
+    - Help shape strategy by connecting product, engineering, and research questions to clear measurement.
+    - Focus on making technical systems more understandable, useful, and accountable for the teams building them.
+- id: google
+  company: Google
+  role: Software Engineer, Chrome Safe Browsing
+  periodStart: Before Figma
+  website: https://google.com/chrome/
+  logoText: G
+  bullets:
+    - Worked on Chrome Safe Browsing to help prevent people from downloading malware.
+    - Built product and security engineering judgment around large-scale user protection systems.
+- id: duo-security
+  company: Duo Security
+  role: Data Scientist
+  periodStart: Earlier
+  website: https://duo.com
+  logoText: D
+  bullets:
+    - Rearchitected data ingestion systems to make security data easier to access and use.
+    - Helped build the company's first machine learning pipeline.
+    - Studied user security behavior through analysis, data products, and applied research questions.

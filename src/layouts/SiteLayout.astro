@@ -1,0 +1,94 @@
+---
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Olabode Anise",
+  description = "Olabode Anise writes about security, data, and technology.",
+} = Astro.props;
+const pageTitle = title === "Olabode Anise" ? title : `${title} - Olabode Anise`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <script is:inline>
+      (() => {
+        const key = "olabode-theme";
+        const root = document.documentElement;
+        const stored = localStorage.getItem(key);
+        const preference = stored === "light" || stored === "dark" || stored === "system" ? stored : "system";
+        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        root.classList.toggle("dark", preference === "dark" || (preference === "system" && systemDark));
+        root.dataset.theme = preference;
+      })();
+    </script>
+  </head>
+  <body>
+    <Nav />
+    <main id="main-content" class="min-h-screen pt-[var(--topbar-height)]">
+      <slot />
+    </main>
+    <Footer />
+    <script is:inline>
+      (() => {
+        const menuButton = document.querySelector("[data-menu-button]");
+        const menuPanel = document.querySelector("[data-menu-panel]");
+        menuButton?.addEventListener("click", () => {
+          const nextExpanded = menuButton.getAttribute("aria-expanded") !== "true";
+          menuButton.setAttribute("aria-expanded", String(nextExpanded));
+          menuPanel?.classList.toggle("hidden", !nextExpanded);
+        });
+
+        const key = "olabode-theme";
+        const root = document.documentElement;
+        const systemQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+        const applyTheme = (theme) => {
+          const systemDark = systemQuery.matches;
+          root.classList.toggle("dark", theme === "dark" || (theme === "system" && systemDark));
+          root.dataset.theme = theme;
+          document.querySelectorAll("[data-theme-option]").forEach((button) => {
+            button.setAttribute("aria-pressed", String(button.dataset.themeOption === theme));
+          });
+        };
+
+        const saved = localStorage.getItem(key);
+        applyTheme(saved === "light" || saved === "dark" || saved === "system" ? saved : "system");
+
+        document.querySelectorAll("[data-theme-option]").forEach((button) => {
+          button.addEventListener("click", () => {
+            const theme = button.dataset.themeOption;
+            if (theme === "light" || theme === "dark" || theme === "system") {
+              localStorage.setItem(key, theme);
+              applyTheme(theme);
+            }
+          });
+        });
+
+        systemQuery.addEventListener("change", () => {
+          if ((localStorage.getItem(key) || "system") === "system") {
+            applyTheme("system");
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+import PageHero from "../../components/PageHero.astro";
+import TimelineEntry from "../../components/TimelineEntry.astro";
+import SiteLayout from "../../layouts/SiteLayout.astro";
+
+const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const formatter = new Intl.DateTimeFormat("en-US", { month: "short", year: "numeric", timeZone: "UTC" });
+const groups = posts.reduce<Map<string, typeof posts>>((acc, post) => {
+  const key = formatter.format(post.data.pubDate);
+  const group = acc.get(key) ?? [];
+  group.push(post);
+  acc.set(key, group);
+  return acc;
+}, new Map());
+const groupedPosts = Array.from(groups.entries());
+---
+
+<SiteLayout title="Thoughts" description="Writing by Olabode Anise about security, data, and technology.">
+  <PageHero eyebrow="Thoughts" title="Paper notes, security ideas, and the occasional data-shaped thought." />
+
+  <section class="site-container pb-16">
+    <div class="flex flex-col">
+      {groupedPosts.map(([dateLabel, entries], index) => (
+        <TimelineEntry start={dateLabel} active={index === 0} showLine={index < groupedPosts.length - 1}>
+          <div class="flex flex-col gap-8">
+            {entries.map((post) => (
+              <article class="flex flex-col gap-1">
+                <h2 class="text-base font-normal leading-snug text-[var(--color-primary)]">
+                  <a class="underline decoration-transparent" href={`/blog/${post.id}/`}>{post.data.title}</a>
+                </h2>
+                {post.data.description && <p class="text-base text-[var(--color-primary-muted)]">{post.data.description}</p>}
+              </article>
+            ))}
+          </div>
+        </TimelineEntry>
+      ))}
+    </div>
+  </section>
+</SiteLayout>

@@ -1,0 +1,47 @@
+---
+import { getCollection } from "astro:content";
+import PageHero from "../components/PageHero.astro";
+import TimelineEntry from "../components/TimelineEntry.astro";
+import SiteLayout from "../layouts/SiteLayout.astro";
+
+const publications = await getCollection("publications", ({ data }) => !data.draft);
+---
+
+<SiteLayout title="Publications" description="Publications and research writing by Olabode Anise.">
+  <PageHero eyebrow="Publications" title="Research notes and publication history belong here." />
+
+  <section class="site-container pb-16">
+    {publications.length > 0 ? (
+      <div class="flex flex-col">
+        {publications.map((publication, index) => (
+          <TimelineEntry start={publication.data.date} active={index === 0} showLine={index < publications.length - 1}>
+            <article class="flex flex-col gap-2">
+              <h2 class="text-base font-normal leading-snug text-[var(--color-primary)]">
+                {publication.data.url ? (
+                  <a class="underline decoration-transparent" href={publication.data.url} target="_blank" rel="noopener noreferrer">
+                    {publication.data.title}
+                  </a>
+                ) : (
+                  publication.data.title
+                )}
+              </h2>
+              <p class="text-base text-[var(--color-primary-muted)]">{publication.data.authors}</p>
+              {publication.data.bullets.length > 0 && (
+                <ul class="list-square space-y-1 pl-5 text-base text-[var(--color-primary-muted)] marker:text-[var(--color-primary-soft)]">
+                  {publication.data.bullets.map((bullet) => <li>{bullet}</li>)}
+                </ul>
+              )}
+            </article>
+          </TimelineEntry>
+        ))}
+      </div>
+    ) : (
+      <div class="border-t border-[var(--color-border)] pt-5 text-base text-[var(--color-primary-muted)]">
+        <p>
+          Publication list coming soon. For now, the paper notes live under{" "}
+          <a class="underline decoration-[var(--color-border)]" href="/blog/">Thoughts</a>.
+        </p>
+      </div>
+    )}
+  </section>
+</SiteLayout>

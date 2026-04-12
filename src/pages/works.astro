@@ -1,0 +1,48 @@
+---
+import { getCollection } from "astro:content";
+import PageHero from "../components/PageHero.astro";
+import TimelineEntry from "../components/TimelineEntry.astro";
+import SiteLayout from "../layouts/SiteLayout.astro";
+
+const works = await getCollection("works");
+---
+
+<SiteLayout title="Works" description="Professional experience and selected work by Olabode Anise.">
+  <PageHero eyebrow="Works" title="Security, data, product strategy, and the systems that make teams sharper." />
+
+  <section class="site-container pb-16">
+    <div class="flex flex-col">
+      {works.map((work, index) => (
+        <TimelineEntry
+          start={work.data.periodStart}
+          end={work.data.periodEnd}
+          active={work.data.current}
+          showLine={index < works.length - 1}
+        >
+          <div class="flex flex-col gap-2">
+            <div class="flex items-center gap-2">
+              <div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] text-[0.72rem] font-medium text-[var(--color-primary)]">
+                {work.data.logoText}
+              </div>
+              <p class="text-base text-[var(--color-primary)]">
+                {work.data.website ? (
+                  <a class="underline decoration-transparent" href={work.data.website} target="_blank" rel="noopener noreferrer">
+                    {work.data.company}
+                  </a>
+                ) : (
+                  work.data.company
+                )}
+                <span class="mx-1 text-[var(--color-primary-soft)]">–</span>
+                <span class="text-[var(--color-primary-muted)]">{work.data.role}</span>
+              </p>
+            </div>
+
+            <ul class="list-square space-y-1 pl-5 text-base text-[var(--color-primary-muted)] marker:text-[var(--color-primary-soft)]">
+              {work.data.bullets.map((bullet) => <li>{bullet}</li>)}
+            </ul>
+          </div>
+        </TimelineEntry>
+      ))}
+    </div>
+  </section>
+</SiteLayout>

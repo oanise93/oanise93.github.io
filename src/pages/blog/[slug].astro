@@ -1,0 +1,32 @@
+---
+import { getCollection, render } from "astro:content";
+import PageHero from "../../components/PageHero.astro";
+import SiteLayout from "../../layouts/SiteLayout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const date = new Intl.DateTimeFormat("en-US", {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+  timeZone: "UTC",
+}).format(post.data.pubDate);
+---
+
+<SiteLayout title={post.data.title} description={post.data.description ?? `Writing by Olabode Anise, published ${date}.`}>
+  <PageHero eyebrow={date} title={post.data.title} />
+
+  <article class="site-container pb-20">
+    <div class="prose-content">
+      <Content />
+    </div>
+  </article>
+</SiteLayout>
