@@ -1,5 +1,5 @@
 <div
-  class="fixed left-0 z-40 h-px w-full bg-[var(--color-border)]"
+  class="fixed left-0 z-40 h-[2px] w-full bg-[var(--color-border)]"
   style="top: var(--topbar-height);"
   role="progressbar"
   aria-label="Reading progress"
@@ -13,29 +13,37 @@
 
 <script>
   (() => {
-    const article = document.querySelector<HTMLElement>("[data-reading-progress-scope]");
-    const progress = document.querySelector<HTMLElement>("[data-reading-progress]");
-    const indicator = document.querySelector<HTMLElement>("[data-reading-progress-indicator]");
+    const initReadingProgress = () => {
+      const article = document.querySelector<HTMLElement>("[data-reading-progress-scope]");
+      const progress = document.querySelector<HTMLElement>("[data-reading-progress]");
+      const indicator = document.querySelector<HTMLElement>("[data-reading-progress-indicator]");
 
-    if (!article || !progress || !indicator) {
-      return;
-    }
+      if (!article || !progress || !indicator) {
+        return;
+      }
 
-    const clamp = (value: number) => Math.min(1, Math.max(0, value));
+      const clamp = (value: number) => Math.min(1, Math.max(0, value));
 
-    const updateProgress = () => {
-      const viewportHeight = window.innerHeight;
-      const articleTop = article.getBoundingClientRect().top + window.scrollY;
-      const readableDistance = Math.max(article.offsetHeight - viewportHeight, 1);
-      const read = clamp((window.scrollY - articleTop) / readableDistance);
-      const percent = Math.round(read * 100);
+      const updateProgress = () => {
+        const viewportHeight = window.innerHeight;
+        const articleTop = article.getBoundingClientRect().top + window.scrollY;
+        const readableDistance = Math.max(article.offsetHeight - viewportHeight, 1);
+        const read = clamp((window.scrollY - articleTop) / readableDistance);
+        const percent = Math.round(read * 100);
 
-      indicator.style.transform = `scaleX(${read})`;
-      progress.setAttribute("aria-valuenow", String(percent));
+        indicator.style.transform = `scaleX(${read})`;
+        progress.setAttribute("aria-valuenow", String(percent));
+      };
+
+      updateProgress();
+      window.addEventListener("scroll", updateProgress, { passive: true });
+      window.addEventListener("resize", updateProgress);
     };
 
-    updateProgress();
-    window.addEventListener("scroll", updateProgress, { passive: true });
-    window.addEventListener("resize", updateProgress);
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initReadingProgress, { once: true });
+    } else {
+      initReadingProgress();
+    }
   })();
 </script>

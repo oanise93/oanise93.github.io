@@ -1,30 +1,45 @@
+- id: openai
+  company: OpenAI
+  role: Member of Technical Staff
+  periodStart: 2026-04
+  website: https://openai.com
+  logo: /assets/logos/openai.svg
+  logoText: O
+  current: true
+  bullets:
+    - Working on Codex
 - id: figma
   company: Figma
   role: Data Science Lead
-  periodStart: Now
+  periodStart: 2022-01
   website: https://figma.com
+  logo: /assets/logos/figma.svg
   logoText: Fi
-  current: true
   bullets:
-    - Lead three Data Science teams across AI, infrastructure, applied research, and data platform work.
-    - Help shape strategy by connecting product, engineering, and research questions to clear measurement.
-    - Focus on making technical systems more understandable, useful, and accountable for the teams building them.
+    - Started as an IC focusing on experimentation and led a few big migrations (homegrown XP platform -> Statsig, homegrown ETL -> dbt).  
+    - Founded a new team called Core Data which performed applied research and built data products.
+    - Switched to management and eventually began leading the AI and Infra Data Science teams.
+    - Learned a ton about leadership, hiring and development, and launching new products.  
 - id: google
   company: Google
   role: Software Engineer, Chrome Safe Browsing
-  periodStart: Before Figma
+  periodStart: 2021-02
   website: https://google.com/chrome/
+  logo: /assets/logos/google.svg
   logoText: G
   bullets:
-    - Worked on Chrome Safe Browsing to help prevent people from downloading malware.
-    - Built product and security engineering judgment around large-scale user protection systems.
+    - Worked on Chrome Safe Browsing with a focus protecting users against malware in Mircosoft Office files.
+    - Had the chance to work on my favorite product in Google Chrome.
+    - Learned what it was like to work at a large company and that I like having a job that also involved using data.
 - id: duo-security
   company: Duo Security
   role: Data Scientist
-  periodStart: Earlier
+  periodStart: 2016-05
   website: https://duo.com
+  logo: /assets/logos/duo-security.svg
   logoText: D
   bullets:
-    - Rearchitected data ingestion systems to make security data easier to access and use.
+    - Rearchitected data ingestion systems to make data more accessible.
     - Helped build the company's first machine learning pipeline.
-    - Studied user security behavior through analysis, data products, and applied research questions.
+    - Had my first intern and co-authored a paper.
+    - Learned what a healthy work culture looks like, how to do industry research, and that following your intersts pays off. 

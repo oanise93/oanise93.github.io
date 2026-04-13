@@ -4,25 +4,56 @@ import PageHero from "../components/PageHero.astro";
 import TimelineEntry from "../components/TimelineEntry.astro";
 import SiteLayout from "../layouts/SiteLayout.astro";
 
-const works = await getCollection("works");
+const monthFormatter = new Intl.DateTimeFormat("en-US", {
+  month: "short",
+  year: "numeric",
+  timeZone: "UTC",
+});
+
+const parseYearMonth = (date: string) => {
+  const [year, month] = date.split("-").map(Number);
+  return Date.UTC(year, month - 1, 1);
+};
+
+const formatYearMonth = (date: string) => monthFormatter.format(new Date(parseYearMonth(date)));
+
+const getSortDate = (work: Awaited<ReturnType<typeof getCollection<"works">>>[number]) =>
+  parseYearMonth(work.data.periodEnd ?? work.data.periodStart);
+
+const works = (await getCollection("works")).sort((a, b) => getSortDate(b) - getSortDate(a));
 ---
 
 <SiteLayout title="Works" description="Professional experience and selected work by Olabode Anise.">
-  <PageHero eyebrow="Works" title="Security, data, product strategy, and the systems that make teams sharper." />
+  <PageHero eyebrow="Works" title="Making new technologies usable and accessible across security, desgin, and AI. " />
 
   <section class="site-container pb-16">
     <div class="flex flex-col">
       {works.map((work, index) => (
         <TimelineEntry
-          start={work.data.periodStart}
-          end={work.data.periodEnd}
+          start={formatYearMonth(work.data.periodStart)}
+          end={work.data.periodEnd ? formatYearMonth(work.data.periodEnd) : undefined}
           active={work.data.current}
           showLine={index < works.length - 1}
         >
           <div class="flex flex-col gap-2">
             <div class="flex items-center gap-2">
-              <div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] text-[0.72rem] font-medium text-[var(--color-primary)]">
-                {work.data.logoText}
+              <div
+                class="flex h-6 w-6 shrink-0 items-center justify-center rounded-md border border-[var(--color-border)] bg-white text-[0.72rem] font-medium text-[var(--color-primary)]"
+                aria-hidden="true"
+              >
+                {work.data.logo ? (
+                  <img
+                    class="h-4 w-4 object-contain"
+                    src={work.data.logo}
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : (
+                  work.data.logoText
+                )}
               </div>
               <p class="text-base text-[var(--color-primary)]">
                 {work.data.website ? (
@@ -38,7 +69,15 @@ const works = await getCollection("works");
             </div>
 
             <ul class="list-square space-y-1 pl-5 text-base text-[var(--color-primary-muted)] marker:text-[var(--color-primary-soft)]">
-              {work.data.bullets.map((bullet) => <li>{bullet}</li>)}
+              {work.data.bullets.map((bullet, bulletIndex) => (
+                <li>
+                  {bulletIndex === work.data.bullets.length - 1 ? (
+                    <strong class="font-medium text-[var(--color-primary)]">{bullet}</strong>
+                  ) : (
+                    bullet
+                  )}
+                </li>
+              ))}
             </ul>
           </div>
         </TimelineEntry>

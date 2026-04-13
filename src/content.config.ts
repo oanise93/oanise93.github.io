@@ -1,6 +1,8 @@
 import { defineCollection, z } from "astro:content";
 import { file, glob } from "astro/loaders";
 
+const yearMonth = z.string().regex(/^\d{4}-(0[1-9]|1[0-2])$/, "Use YYYY-MM format");
+
 const blog = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/blog" }),
   schema: z.object({
@@ -30,9 +32,10 @@ const works = defineCollection({
   schema: z.object({
     company: z.string(),
     role: z.string(),
-    periodStart: z.string(),
-    periodEnd: z.string().optional(),
+    periodStart: yearMonth,
+    periodEnd: yearMonth.optional(),
     website: z.string().url().optional(),
+    logo: z.string().optional(),
     logoText: z.string(),
     bullets: z.array(z.string()),
     current: z.boolean().default(false),
