@@ -47,6 +47,7 @@ const publications = defineCollection({
   schema: z.object({
     title: z.string(),
     authors: z.string(),
+    venue: z.string(),
     date: z.string(),
     url: z.string().url().optional(),
     bullets: z.array(z.string()).default([]),

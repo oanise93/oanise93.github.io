@@ -1,6 +1,24 @@
-- id: publication-placeholder
-  title: Publication placeholder
-  authors: ""
-  date: Draft
-  bullets: []
-  draft: true
+- id: user-perceptions-fido2-roaming-authenticators
+  title: User Perceptions of the Usability and Security of Smartphones as FIDO2 Roaming Authenticators
+  authors: Kentrell Owens, Olabode Anise, Amanda Krauss, Blase Ur
+  venue: Seventeenth Symposium on Usable Privacy and Security (SOUPS 2021)
+  date: Aug 2021
+  url: https://www.usenix.org/system/files/soups2021-owens.pdf
+- id: fido2-roaming-authenticators-framework
+  title: A Framework for Evaluating the Usability and Security of Smartphones as FIDO2 Roaming Authenticators
+  authors: Kentrell Owens, Blase Ur, Olabode Anise
+  venue: Who Are You?! Adventures in Authentication Workshop (WAY 2020)
+  date: Aug 2020
+  url: https://wayworkshop.org/2020/papers/way2020-owens.pdf
+- id: dont-at-me-twitter-bots
+  title: "Don't @ Me: Hunting Twitter Bots at Scale"
+  authors: Jordan Wright, Olabode Anise
+  venue: Black Hat USA 2018
+  date: Aug 2018
+  url: https://i.blackhat.com/us-18/Wed-August-8/us-18-Anise-Wright-Dont-@-Me-Hunting-Twitter-Bots-at-Scale-wp.pdf
+- id: droid-android-application-analysis-tools
+  title: "*droid: Assessment and Evaluation of Android Application Analysis Tools"
+  authors: Bradley Reaves, Jasmine Bowers, Sigmund Albert Gorski III, Olabode Anise, Rahul Bobhate, Raymond Cho, Hiranava Das, Sharique Hussain, Hamza Karachiwala, Nolen Scaife, Byron Wright, Kevin Butler, William Enck, Patrick Traynor
+  venue: ACM Computing Surveys, Volume 49, Issue 3
+  date: Oct 2016
+  url: https://dl.acm.org/doi/pdf/10.1145/2996358

@@ -1,10 +1,13 @@
 ---
 const links = [
   { label: "Works", href: "/works/" },
-  { label: "Thoughts", href: "/blog/" },
-  { label: "Publications", href: "/publications/" },
+  { label: "Writing", href: "/blog/" },
+  { label: "Publications and Speaking", href: "/publications/" },
   { label: "Resume", href: "/assets/resume.pdf" },
 ];
+
+const pathname = Astro.url.pathname;
+const isActive = (href: string) => (href.endsWith("/") ? pathname.startsWith(href) : pathname === href);
 ---
 
 <header class="fixed left-0 top-0 z-50 w-full border-b border-[var(--color-border)] bg-[var(--color-page)]/95 backdrop-blur">
@@ -21,11 +24,26 @@ const links = [
     </a>
 
     <div class="hidden items-center gap-5 md:flex">
-      {links.map((link) => (
-        <a class="text-sm text-[var(--color-primary-muted)] underline decoration-transparent" href={link.href}>
-          {link.label}
-        </a>
-      ))}
+      {
+        links.map((link) => {
+          const active = isActive(link.href);
+
+          return (
+            <a
+              class:list={[
+                "text-sm underline underline-offset-4",
+                active
+                  ? "font-medium text-[var(--color-primary)] decoration-[var(--color-accent)]"
+                  : "text-[var(--color-primary-muted)] decoration-transparent",
+              ]}
+              href={link.href}
+              aria-current={active ? "page" : undefined}
+            >
+              {link.label}
+            </a>
+          );
+        })
+      }
       <button
         class="theme-toggle"
         type="button"
@@ -74,11 +92,26 @@ const links = [
 
   <div id="mobile-menu" class="site-container hidden pb-4 md:hidden" data-menu-panel>
     <div class="flex flex-col gap-3 border-t border-[var(--color-border)] pt-4">
-      {links.map((link) => (
-        <a class="text-base text-[var(--color-primary-muted)] underline decoration-transparent" href={link.href}>
-          {link.label}
-        </a>
-      ))}
+      {
+        links.map((link) => {
+          const active = isActive(link.href);
+
+          return (
+            <a
+              class:list={[
+                "text-base underline underline-offset-4",
+                active
+                  ? "font-medium text-[var(--color-primary)] decoration-[var(--color-accent)]"
+                  : "text-[var(--color-primary-muted)] decoration-transparent",
+              ]}
+              href={link.href}
+              aria-current={active ? "page" : undefined}
+            >
+              {link.label}
+            </a>
+          );
+        })
+      }
       <button
         class="theme-toggle self-start"
         type="button"

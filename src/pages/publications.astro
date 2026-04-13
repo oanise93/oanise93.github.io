@@ -7,8 +7,8 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 const publications = await getCollection("publications", ({ data }) => !data.draft);
 ---
 
-<SiteLayout title="Publications" description="Publications and research writing by Olabode Anise.">
-  <PageHero eyebrow="Publications" title="Research notes and publication history belong here." />
+<SiteLayout title="Publications and Speaking" description="Publications and speaking by Olabode Anise.">
+  <PageHero eyebrow="Publications and Speaking" title="Research papers and talks on usable security, authentication, and internet abuse." />
 
   <section class="site-container pb-16">
     {publications.length > 0 ? (
@@ -25,7 +25,14 @@ const publications = await getCollection("publications", ({ data }) => !data.dra
                   publication.data.title
                 )}
               </h2>
-              <p class="text-base text-[var(--color-primary-muted)]">{publication.data.authors}</p>
+              <div class="grid gap-1 text-base text-[var(--color-primary-muted)]">
+                <p>
+                  <span class="font-medium text-[var(--color-primary)]">Authors:</span> {publication.data.authors}
+                </p>
+                <p>
+                  <span class="font-medium text-[var(--color-primary)]">Venue:</span> {publication.data.venue}
+                </p>
+              </div>
               {publication.data.bullets.length > 0 && (
                 <ul class="list-square space-y-1 pl-5 text-base text-[var(--color-primary-muted)] marker:text-[var(--color-primary-soft)]">
                   {publication.data.bullets.map((bullet) => <li>{bullet}</li>)}
@@ -39,7 +46,7 @@ const publications = await getCollection("publications", ({ data }) => !data.dra
       <div class="border-t border-[var(--color-border)] pt-5 text-base text-[var(--color-primary-muted)]">
         <p>
           Publication list coming soon. For now, the paper notes live under{" "}
-          <a class="underline decoration-[var(--color-border)]" href="/blog/">Thoughts</a>.
+          <a class="underline decoration-[var(--color-border)]" href="/blog/">Writing</a>.
         </p>
       </div>
     )}
