@@ -16,9 +16,9 @@
   logo: /assets/logos/figma.svg
   logoText: Fi
   bullets:
-    - Started as an IC focusing on experimentation and led a few big migrations (homegrown XP platform -> Statsig, homegrown ETL -> dbt).  
+    - Started as an IC focusing on experimentation and led a few big migrations (homegrown XP platform -> Statsig and homegrown ETL -> dbt).  
     - Founded a new team called Core Data which performed applied research and built data products.
-    - Switched to management and eventually began leading the AI and Infra Data Science teams.
+    - Switched to management and eventually began leading the AI, Infra, and Core Data Science teams.
     - Learned a ton about leadership, hiring and development, and launching new products.  
 - id: google
   company: Google
@@ -30,7 +30,7 @@
   bullets:
     - Worked on Chrome Safe Browsing with a focus protecting users against malware in Mircosoft Office files.
     - Had the chance to work on my favorite product in Google Chrome.
-    - Learned what it was like to work at a large company and that I like having a job that also involved using data.
+    - Learned what it was like to work at a large company and that I prefer that my work involve using data.
 - id: duo-security
   company: Duo Security
   role: Data Scientist
