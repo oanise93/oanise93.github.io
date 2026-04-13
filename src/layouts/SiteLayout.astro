@@ -68,6 +68,11 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
           document.querySelectorAll("[data-theme-option]").forEach((button) => {
             button.setAttribute("aria-pressed", String(button.dataset.themeOption === theme));
           });
+          document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
+            const isDark = root.classList.contains("dark");
+            button.setAttribute("aria-checked", String(isDark));
+            button.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+          });
         };
 
         const saved = localStorage.getItem(key);
@@ -80,6 +85,14 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
               localStorage.setItem(key, theme);
               applyTheme(theme);
             }
+          });
+        });
+
+        document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
+          button.addEventListener("click", () => {
+            const nextTheme = root.classList.contains("dark") ? "light" : "dark";
+            localStorage.setItem(key, nextTheme);
+            applyTheme(nextTheme);
           });
         });
 

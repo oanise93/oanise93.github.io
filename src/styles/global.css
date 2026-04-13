@@ -82,6 +82,59 @@
     background: var(--color-border);
   }
 
+  .theme-toggle {
+    position: relative;
+    display: inline-flex;
+    width: 3rem;
+    height: 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: var(--color-surface);
+    padding: 0.1875rem 0.3125rem;
+    transition:
+      background 160ms ease,
+      border-color 160ms ease;
+  }
+
+  .theme-toggle-icon {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    width: 0.75rem;
+    height: 0.75rem;
+    color: var(--color-primary-soft);
+  }
+
+  .theme-toggle-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .theme-toggle-knob {
+    position: absolute;
+    left: 0.1875rem;
+    z-index: 0;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--color-primary-soft) 22%, transparent);
+    transition:
+      background 160ms ease,
+      transform 160ms ease;
+  }
+
+  .theme-toggle[aria-checked="true"] {
+    border-color: color-mix(in srgb, var(--color-accent) 65%, var(--color-border));
+    background: var(--color-accent-soft);
+  }
+
+  .theme-toggle[aria-checked="true"] .theme-toggle-knob {
+    background: color-mix(in srgb, var(--color-accent) 28%, transparent);
+    transform: translateX(1.5rem);
+  }
+
   .prose-content {
     color: var(--color-primary-muted);
   }
