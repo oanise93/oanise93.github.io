@@ -7,7 +7,8 @@
   logoText: O
   current: true
   bullets:
-    - Working on Codex
+    - Building Codex
+    - "Let's see what I learn from this gig :)"
 - id: figma
   company: Figma
   role: Data Science Lead
@@ -16,10 +17,10 @@
   logo: /assets/logos/figma.svg
   logoText: Fi
   bullets:
-    - Started as an IC focusing on experimentation and led a few big migrations (homegrown XP platform -> Statsig and homegrown ETL -> dbt).  
-    - Founded a new team called Core Data which performed applied research and built data products.
+    - Started as an IC focused on experimentation and led a few big migrations (homegrown experimentation platform -> Statsig, homegrown ETL -> dbt).
+    - Founded a new team, Core Data, that did applied research and built data products.
     - Switched to management and eventually began leading the AI, Infra, and Core Data Science teams.
-    - Learned a ton about leadership, hiring and development, and launching new products.  
+    - Learned a ton about leadership, hiring, developing people, and launching new products.
 - id: google
   company: Google
   role: Software Engineer, Chrome Safe Browsing
@@ -28,9 +29,9 @@
   logo: /assets/logos/google.svg
   logoText: G
   bullets:
-    - Worked on Chrome Safe Browsing with a focus protecting users against malware in Mircosoft Office files.
-    - Had the chance to work on my favorite product in Google Chrome.
-    - Learned what it was like to work at a large company and that I prefer that my work involve using data.
+    - Worked on Chrome Safe Browsing, with a focus on protecting users from malware in Microsoft Office files.
+    - Had the chance to work on Google Chrome, my favorite product.
+    - Learned what it was like to work at a large company and that I prefer work that involves data.
 - id: duo-security
   company: Duo Security
   role: Data Scientist
@@ -41,5 +42,5 @@
   bullets:
     - Rearchitected data ingestion systems to make data more accessible.
     - Helped build the company's first machine learning pipeline.
-    - Had my first intern and co-authored a paper.
-    - Learned what a healthy work culture looks like, how to do industry research, and that following your intersts pays off. 
+    - Mentored my first intern and co-authored a paper.
+    - Learned what a healthy work culture looks like, how to do industry research, and that following your interests pays off.
